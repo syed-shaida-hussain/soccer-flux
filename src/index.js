@@ -3,7 +3,8 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import { makeServer } from "./server";
-import { BrowserRouter as Router } from "react-router-dom"
+import { AuthProvider } from "./Contexts/auth-context";
+import { BrowserRouter as Router  } from "react-router-dom"
 
 // Call make Server
 makeServer();
@@ -11,7 +12,9 @@ makeServer();
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <App />
+    <AuthProvider>
+     <App />
+    </AuthProvider>
     </Router>
   </React.StrictMode>,
   document.getElementById("root")
