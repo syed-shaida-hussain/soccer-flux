@@ -10,7 +10,6 @@ const signupService = async ({ email, password , firstName , lastName }) => {
       firstName : firstName , 
       lastName : lastName
     });
-    console.log(data)
     return data;
    
   } catch (e) {
