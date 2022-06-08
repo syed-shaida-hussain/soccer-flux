@@ -1,0 +1,82 @@
+:root {
+    --body-bg-color:rgb(243, 243, 243);
+    --page-bg-color :white;
+    --gray-color:gray;
+    --primary-color : rgb(56, 56, 163);
+  }
+  
+  body {
+    font-family: sans-serif;
+    background-color: var(--body-bg-color);
+    margin: 0;
+    padding: 0;
+  }
+  
+  .centered {
+    text-align: center;
+  }
+  
+  .flex-page {
+    display: flex;
+  }
+  
+  .page-wrapper {
+    margin: 3rem auto;
+    background-color: var(--page-bg-color);
+    flex-direction: column;
+    width: 24rem;
+    padding: 2rem;
+    border-radius: 0.5rem;
+  }
+  
+  .page-heading {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .input-labels {
+    margin-bottom: 0.5rem;
+  }
+  
+  .input-field {
+    height: 1.8rem;
+    border: 1px solid var(--gray-color);
+    border-radius: 3px;
+    outline: none;
+    margin-bottom: 1rem;
+    padding-left: 5px;
+  }
+  
+  .logout-btn-container{
+    text-align: right;
+  }
+  
+  .password-info {
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .login-button,
+  .signup-btn {
+    padding: 0.6rem;
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--page-bg-color);
+    font-size: 1rem;
+  }
+  
+  .signin-guest-btn{
+    background-color: var(--gray-color);
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  .create-account-link,
+  .login-link {
+    border: none;
+    margin-top: 1rem;
+    text-decoration: none;
+    color: var(--primary-color);
+    background: none;
+  }
