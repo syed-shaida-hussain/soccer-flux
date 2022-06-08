@@ -1,0 +1,104 @@
+*{
+    background: none;
+    border: none;
+}
+
+.flex{
+    display: flex;
+}
+
+.video-card{
+    width: 17rem;
+    height: 12rem;
+    margin-right: 1rem;
+    margin-bottom : 1rem;
+}
+
+.video {
+    width: 17rem;
+    height: 8rem;
+}
+
+.home-main {
+    display: flex;
+    justify-content: space-between;
+    padding:  1rem;
+    width: 90vw;
+    height: 75vh;
+}
+
+.font-small{
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.margin{
+    margin-left: 0.5rem;
+}
+
+.home-main{
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.like-btn {
+    margin-left: 5rem;
+}
+
+.library-add-btn,.dislike-btn{
+    margin-left: 1rem;
+}
+
+.red{
+    color: rgb(212, 54, 54);
+}
+
+.avatar{
+    max-width: 1.7rem;
+    min-height: 1.7rem;
+    border-radius: 50%;
+    margin-left: 0.5rem;
+}
+
+.margin-top-bottom{
+    margin: 1rem;
+}
+
+.explore-suggestion{
+    height: 10rem;
+    color: black;
+    font-size: 1.2rem;
+}
+
+.explore-btn{
+    width: fit-content;
+}
+
+.services{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 2rem;
+}
+
+.delete-icon{
+    cursor: pointer;
+    position: relative;
+    bottom: 1.6rem;
+    left: 14rem;
+}
+
+.clear-history-btn{
+    font-size: 1.2rem;
+    color : rgb(212, 54, 54);
+}
+
+.clear-history-btn-container{
+    width: 90vw;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.playlist-name{
+    border: 1px solid black;
+    padding: 1rem;
+}
