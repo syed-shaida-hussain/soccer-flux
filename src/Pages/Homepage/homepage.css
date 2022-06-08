@@ -1,0 +1,137 @@
+body , * {
+    margin: 0;
+    padding: 0;
+    
+}
+
+.main-wrapper{
+    display: flex;
+}
+
+.nav-links {
+    background-color: rgb(212, 54, 54);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-items: center;
+    color : white;
+    padding: 0.7rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.nav-pill {
+    list-style: none;
+    margin: 0rem 1rem;
+    font-size: 1.1rem;
+    color: white;
+}
+
+.search-bar {
+    outline: none;
+    background-color: white;
+    border-radius: 0.2rem;
+    width: 17rem;
+    height: 1.7rem;
+    padding: 0rem 0.5rem;
+}
+
+.sidebar-container {
+    width: 5rem;
+}
+
+.sidebar-nav{
+    list-style: none;
+    text-align: center;
+}
+
+.sidebar-link{
+    margin-bottom: 1.5rem ;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-link-active{
+    color: rgb(212, 54, 54);
+    text-decoration: none;
+}
+
+.hover:hover{
+    background-color: #dadde0;
+}
+
+.material-icons{
+    font-size: 1.7rem;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+}
+
+.main-container{
+    background-color: #f3f4f6;
+}
+
+.home-main {
+    display: flex;
+    justify-content: space-between;
+    padding:  1rem;
+    width: 90vw;
+    height: 75vh;
+}
+
+.info{
+    max-width: 50ch;
+    font-size: 1.2rem;
+    line-height: 3rem;
+}
+
+.landing-img{
+    max-width: 25rem;
+    margin-right: 5rem;
+}
+
+.chip-container{
+    display: flex;
+    justify-content: space-around;
+    margin: 0.5rem;
+}
+
+.chip{
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 1rem;
+    color : black;
+    background-color: #dddfe0;
+    text-decoration: none;
+}
+
+.explore-btn{
+    padding: 0.5rem 3rem;
+    margin-top: 2rem;
+    background: none;
+    border: 1.5px solid rgb(212, 54, 54);
+    color: rgb(212, 54, 54) ;
+    font-size: 1rem;
+}
+
+.highlighted{
+    color: rgb(212, 54, 54);
+    font-size: 1.3rem;
+}
+
+.active-link{
+    background-color: rgb(212, 54, 54);
+    color: white;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+.footer{
+    height: 7rem;
+    background-color: rgb(212, 54, 54);
+}
