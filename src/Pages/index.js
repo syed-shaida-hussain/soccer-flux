@@ -8,4 +8,4 @@ import { CategoryCountry } from "./Categories/country-category"
 import { CategoryGeneral } from "./Categories/general-category"
 import { Home } from "./Homepage/homepage"
 
-export { Signin , Signup , VideoListing , SingleVideoPage , CategoryClub , CategoryCountry , CategoryGeneral , Home}
+export { Signin , Signup , VideoListing , SingleVideoPage , CategoryClub , HistoryPage , CategoryCountry , CategoryGeneral , Home}

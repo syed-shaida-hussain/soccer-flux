@@ -4,6 +4,7 @@ import axios from "axios"
 import {Header} from "../../Components/header"
 import { useEffect } from "react"
 import { useServices } from "../../Contexts/service-context"
+import { Sidebar } from "../../Components/sidebar"
 
 const HistoryPage = () => {
     const { videoState , dispatchVideo} = useServices()
@@ -53,6 +54,7 @@ const HistoryPage = () => {
     return (<div>
         <Header />
         <div className = "main-wrapper">
+          <Sidebar/>
       <div>
       
       <hr/>
