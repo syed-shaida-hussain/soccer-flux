@@ -21,7 +21,7 @@ export const videos = [
     description:
       "Messi amazing dribbles and goals with song. This video contains Lionel Messi's top performances for barcelona and PSG. In this video he provides amazing assists and scores amazing goals . Alao enjoy his mesmerizing dribbles with commentories. ",
     creator: "SherAli Edits",
-    category : "club"
+    category : "country"
   },
   {
     _id: uuid(),
@@ -51,7 +51,7 @@ export const videos = [
     description:
       "See all magical moments, dribbling skills & goals in this video. The Story of the GOAT.  ",
     creator: "47 football",
-    category : "general"
+    category : "country"
   },
   {
     _id: uuid(),

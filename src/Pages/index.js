@@ -3,5 +3,10 @@ import { Signup } from "./Authentication/Signup/signup"
 import { VideoListing } from "./Videolisting/videolisting"
 import { SingleVideoPage } from "./SigleVideoPage/single-video"
 import { Library } from "./Library/library"
+import { HistoryPage } from "./History/history"
+import { CategoryClub } from "./Categories/club-caregory"
+import { CategoryCountry } from "./Categories/country-category"
+import { CategoryGeneral } from "./Categories/general-category"
+import { Home } from "./Homepage/homepage"
 
-export { Signin , Signup , VideoListing , SingleVideoPage , Library}
+export { Signin , Signup , VideoListing , SingleVideoPage , CategoryClub , HistoryPage , CategoryCountry , CategoryGeneral , Home , Library}
