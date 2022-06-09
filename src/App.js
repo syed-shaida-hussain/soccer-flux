@@ -1,17 +1,20 @@
 import "./App.css";
-import { Signin , Signup , VideoListing , SingleVideoPage } from "./Pages";
-import { Home } from "./Pages/Homepage/homepage";
+import { Signin , Signup , VideoListing , SingleVideoPage , CategoryClub , CategoryCountry , Home, CategoryGeneral } from "./Pages";
 import { Routes , Route } from "react-router-dom"
 
 function App() {
   return (
     <div className="App">
       <Routes>
+      <Route path = "/" element = { <Home />} />
         <Route path = "/home" element = { <Home />} />
         <Route path = "login" element = {<Signin />} />
         <Route path = "signup" element = {<Signup />} />
         <Route path = "videos" element = { <VideoListing />} />
         <Route path = {`/video/:videoId`} element = {<SingleVideoPage />} />
+        <Route path = "club" element = {<CategoryClub />} />
+        <Route path = "country" element = {<CategoryCountry />} />
+        <Route path = "general" element = {<CategoryGeneral />} />
       </Routes>
     </div>
   );
