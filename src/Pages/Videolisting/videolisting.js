@@ -2,6 +2,7 @@ import { Header } from "../../Components/header"
 import axios from "axios"
 import { useEffect } from "react"
 import "../Videolisting/videolisting.css"
+import {Sidebar} from "../../Components/sidebar"
 import {useNavigate , Link } from "react-router-dom"
 import { useAuth } from "../../Contexts/auth-context"
 import { useServices } from "../../Contexts/service-context"
@@ -37,6 +38,7 @@ const VideoListing = () => {
     return(<div>
         <Header />
         <div className = "main-wrapper">
+          <Sidebar />
             <div>
             <div className = "chip-container">
                 <button ><Link to = "/videos" className="chip active-link"> Explore</Link></button>
