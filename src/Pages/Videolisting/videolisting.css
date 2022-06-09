@@ -1,0 +1,162 @@
+:root{
+    --ctc-color :rgb(212, 54, 54);
+    --black-color : black;
+    --white-color : white;
+    --hover-bg-color :#dadde0;
+    --bg-color : #f3f4f6;
+}
+
+*{
+    background: none;
+    border: none;
+}
+
+.flex{
+    display: flex;
+}
+
+.video-card{
+    width: 17rem;
+    height: 12rem;
+    margin-right: 1rem;
+    margin-bottom : 1rem;
+}
+
+.nav-links{
+    background-color: var(--ctc-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-items: center;
+    color : var(--white-color);
+    padding: 0.7rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.nav-pill {
+    list-style: none;
+    margin: 0rem 1rem;
+    font-size: 1.1rem;
+    color: var(--white-color);
+}
+
+.chip-container{
+    display: flex;
+    justify-content: space-around;
+    margin: 0.5rem;
+}
+
+
+.chip{
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 1rem;
+    color : var(--black-color);
+    background-color: var(--bg-color);
+    text-decoration: none;
+}
+
+.active-link{
+    background-color: var(--ctc-color);
+    color: var(--white-color);
+}
+
+.search-bar {
+    outline: none;
+    background-color: white;
+    background-color: var(--white-color);
+    border: none;
+    border-radius: 0.2rem;
+    width: 17rem;
+    height: 1.7rem;
+}
+
+.video {
+    width: 17rem;
+    height: 8rem;
+}
+
+.home-main {
+    display: flex;
+    justify-content: space-between;
+    padding:  1rem;
+    width: 90vw;
+    height: 75vh;
+}
+
+.font-small{
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.margin{
+    margin-left: 0.5rem;
+}
+
+.home-main{
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.like-btn {
+    margin-left: 5rem;
+}
+
+.library-add-btn,.dislike-btn{
+    margin-left: 1rem;
+}
+
+.red{
+    color: var(--ctc-color);
+}
+
+.avatar{
+    max-width: 1.7rem;
+    min-height: 1.7rem;
+    border-radius: 50%;
+    margin-left: 0.5rem;
+}
+
+.margin-top-bottom{
+    margin: 1rem;
+}
+
+.explore-suggestion{
+    height: 10rem;
+    color: var(--black-color);
+    font-size: 1.2rem;
+}
+
+.explore-btn{
+    width: fit-content;
+}
+
+.services{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 2rem;
+}
+
+.delete-icon{
+    cursor: pointer;
+    position: relative;
+    bottom: 1.6rem;
+    left: 14rem;
+}
+
+.clear-history-btn{
+    font-size: 1.2rem;
+    color : var(--ctc-color);
+}
+
+.clear-history-btn-container{
+    width: 90vw;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.playlist-name{
+    border: 1px solid var(--black-color);
+    padding: 1rem;
+}

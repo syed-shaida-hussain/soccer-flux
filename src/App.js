@@ -1,8 +1,7 @@
 import "./App.css";
+import { Signin , Signup , VideoListing , SingleVideoPage } from "./Pages";
 import { Home } from "./Pages/Homepage/homepage";
-import { Signin } from "./Pages/Authentication/Login/login";
 import { Routes , Route } from "react-router-dom"
-import { Signup } from "./Pages/Authentication/Signup/signup";
 
 function App() {
   return (
@@ -11,6 +10,8 @@ function App() {
         <Route path = "/home" element = { <Home />} />
         <Route path = "login" element = {<Signin />} />
         <Route path = "signup" element = {<Signup />} />
+        <Route path = "videos" element = { <VideoListing />} />
+        <Route path = {`/video/:videoId`} element = {<SingleVideoPage />} />
       </Routes>
     </div>
   );

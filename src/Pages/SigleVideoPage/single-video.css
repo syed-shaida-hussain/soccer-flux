@@ -1,0 +1,74 @@
+*{
+    background: none;
+    border: none;
+}
+
+.flex{
+    display: flex;
+}
+
+.single-video-card{
+    margin: 1rem auto;
+    width: 90%;
+    border: 1px solid red;
+    margin-bottom : 1rem;
+}
+
+.single-video {
+    width: 100%;
+    height: 25rem;
+}
+
+.font-small{
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.margin{
+    margin: 0rem 0.5rem;
+}
+
+.margin-top-bottom{
+    margin: 0.5rem;
+}
+
+.home-main{
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.like-button {
+    margin-left: 1rem;
+}
+
+.red{
+    color: rgb(212, 54, 54);
+}
+
+.avatar{
+    max-width: 1.7rem;
+    min-height: 1.7rem;
+    border-radius: 50%;
+    margin-left: 0.5rem;
+}
+
+.modal-card{
+    border: 1px solid rgb(212, 54, 54);
+    width: fit-content;
+    height: 10rem;
+    position: relative;
+    left: 10rem;
+}
+
+.modal-card>input{
+    margin : 1rem 1rem 0rem 1rem ;
+    width: fit-content;
+    border-bottom: 1px solid black;
+    outline: none;
+}
+
+.add-btn{
+    position: relative;
+    top: 3rem;
+    left: 7rem;
+}
