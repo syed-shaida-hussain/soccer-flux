@@ -1,3 +1,11 @@
+:root{
+    --ctc-color :rgb(212, 54, 54);
+    --black-color : black;
+    --white-color : white;
+    --hover-bg-color :#dadde0;
+    --bg-color : #f3f4f6;
+}
+
 *{
     background: none;
     border: none;
@@ -12,6 +20,56 @@
     height: 12rem;
     margin-right: 1rem;
     margin-bottom : 1rem;
+}
+
+.nav-links{
+    background-color: var(--ctc-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-items: center;
+    color : var(--white-color);
+    padding: 0.7rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.nav-pill {
+    list-style: none;
+    margin: 0rem 1rem;
+    font-size: 1.1rem;
+    color: var(--white-color);
+}
+
+.chip-container{
+    display: flex;
+    justify-content: space-around;
+    margin: 0.5rem;
+}
+
+
+.chip{
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 1rem;
+    color : var(--black-color);
+    background-color: var(--bg-color);
+    text-decoration: none;
+}
+
+.active-link{
+    background-color: var(--ctc-color);
+    color: var(--white-color);
+}
+
+.search-bar {
+    outline: none;
+    background-color: white;
+    background-color: var(--white-color);
+    border: none;
+    border-radius: 0.2rem;
+    width: 17rem;
+    height: 1.7rem;
 }
 
 .video {
@@ -50,7 +108,7 @@
 }
 
 .red{
-    color: rgb(212, 54, 54);
+    color: var(--ctc-color);
 }
 
 .avatar{
@@ -66,7 +124,7 @@
 
 .explore-suggestion{
     height: 10rem;
-    color: black;
+    color: var(--black-color);
     font-size: 1.2rem;
 }
 
@@ -89,7 +147,7 @@
 
 .clear-history-btn{
     font-size: 1.2rem;
-    color : rgb(212, 54, 54);
+    color : var(--ctc-color);
 }
 
 .clear-history-btn-container{
@@ -99,6 +157,6 @@
 }
 
 .playlist-name{
-    border: 1px solid black;
+    border: 1px solid var(--black-color);
     padding: 1rem;
 }

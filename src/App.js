@@ -1,9 +1,6 @@
 import "./App.css";
-import { Signin } from "./Pages/Authentication/Login/login";
+import { Signin , Signup , VideoListing , SingleVideoPage } from "./Pages";
 import { Routes , Route } from "react-router-dom"
-import { Signup } from "./Pages/Authentication/Signup/signup";
-import { VideoListing } from "./Pages/Videolisting/videolisting";
-import { SingleVideoPage } from "./Pages/SigleVideoPage/single-video";
 
 function App() {
   return (
