@@ -1,3 +1,11 @@
+:root{
+    --ctc-color :rgb(212, 54, 54);
+    --black-color : black;
+    --white-color : white;
+    --hover-bg-color :#dadde0;
+    --bg-color : #f3f4f6;
+}
+
 body , * {
     margin: 0;
     padding: 0;
@@ -9,12 +17,12 @@ body , * {
 }
 
 .nav-links {
-    background-color: rgb(212, 54, 54);
+    background-color: var(--ctc-color);
     display: flex;
     align-items: center;
     justify-content: space-between;
     align-items: center;
-    color : white;
+    color : var(--white-color);
     padding: 0.7rem;
     border-radius: 5px;
     margin-bottom: 1rem;
@@ -24,12 +32,13 @@ body , * {
     list-style: none;
     margin: 0rem 1rem;
     font-size: 1.1rem;
-    color: white;
+    color: var(--white-color);
 }
 
 .search-bar {
     outline: none;
-    background-color: white;
+    background-color: var(--white-color);
+    border: none;
     border-radius: 0.2rem;
     width: 17rem;
     height: 1.7rem;
@@ -53,12 +62,12 @@ body , * {
 }
 
 .sidebar-link-active{
-    color: rgb(212, 54, 54);
+    color: var(--ctc-color);
     text-decoration: none;
 }
 
 .hover:hover{
-    background-color: #dadde0;
+    background-color: var(--hover-bg-color);
 }
 
 .material-icons{
@@ -67,11 +76,11 @@ body , * {
 
 .link {
     text-decoration: none;
-    color: black;
+    color: var(--black-color);
 }
 
 .main-container{
-    background-color: #f3f4f6;
+    background-color: var(--bg-color);
 }
 
 .home-main {
@@ -103,8 +112,8 @@ body , * {
     padding: 0.5rem 1rem;
     border: none;
     border-radius: 1rem;
-    color : black;
-    background-color: #dddfe0;
+    color : var(--black-color);
+    background-color: var(--bg-color);
     text-decoration: none;
 }
 
@@ -112,19 +121,19 @@ body , * {
     padding: 0.5rem 3rem;
     margin-top: 2rem;
     background: none;
-    border: 1.5px solid rgb(212, 54, 54);
-    color: rgb(212, 54, 54) ;
+    border: 1.5px solid var(--ctc-color);
+    color: var(--ctc-color);
     font-size: 1rem;
 }
 
 .highlighted{
-    color: rgb(212, 54, 54);
+    color: var(--ctc-color);
     font-size: 1.3rem;
 }
 
 .active-link{
-    background-color: rgb(212, 54, 54);
-    color: white;
+    background-color: var(--ctc-color);
+    color: var(--white-color);
 }
 
 button:hover{
@@ -133,5 +142,5 @@ button:hover{
 
 .footer{
     height: 7rem;
-    background-color: rgb(212, 54, 54);
+    background-color: var(--ctc-color);
 }
