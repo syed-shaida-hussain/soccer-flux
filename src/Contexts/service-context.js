@@ -7,10 +7,14 @@ import { createContext, useContext, useReducer } from "react";
             return {...state , videos : (state.videos , action.payload)}
         case "SET_LIKED_VIDEOS" :
             return {...state , likedVideos : [state.likedVideos , action.payload] }
+        case  "GET_LIKED_VIDEOS" :
+            return {...state ,  likedVideos : (state.likedVideos , action.payload)}
         case "DELETE_LIKED_VIDEOS" :
             return {...state , likedVideos : (state.likedVideos.filter(video => video._id !== action.payload._id))}
         case "SET_WATCHLATER_VIDEOS" :
             return {...state , watchLater : [state.watchLater , action.payload] }
+        case  "GET_WATCHLATER_VIDEOS" :
+            return {...state , watchLater : (state.watchLater , action.payload)}
         case  "DELETE_WATCHLATER_VIDEOS" :
             return {...state , watchLater : (state.watchLater.filter(video => video._id !== action.payload._id))}
         case "SET_HISTORY_VIDEOS" :
