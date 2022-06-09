@@ -15,6 +15,8 @@ import { createContext, useContext, useReducer } from "react";
             return {...state , watchLater : (state.watchLater.filter(video => video._id !== action.payload._id))}
         case "SET_HISTORY_VIDEOS" :
             return {...state , historyVideos : [state.historyVideos , action.payload] }
+        case  "GET_HISTORY_VIDEOS" :
+            return {...state , historyVideos : (state.historyVideos , action.payload)}
         case "SET_PLAYLISTS" :
             return {...state , playlists : [state.playlists , action.payload]}
         case "GET_PLAYLIST_VIDEOS" :
