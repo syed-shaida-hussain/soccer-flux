@@ -10,16 +10,16 @@ function App() {
       <Routes>
       <Route path = "/" element = { <Home />} />
         <Route path = "/home" element = { <Home />} />
-        <Route path = "login" element = {<Signin />} />
-        <Route path = "signup" element = {<Signup />} />
-        <Route path = "videos" element = { <VideoListing />} />
-        <Route path = "library" element = {<Library />}/>
-        <Route path = "history" element = { <HistoryPage />} />
+        <Route path = "/login" element = {<Signin />} />
+        <Route path = "/signup" element = {<Signup />} />
+        <Route path = "/videos" element = { <VideoListing />} />
+        <Route path = "/library" element = {<Library />}/>
+        <Route path = "/history" element = { <HistoryPage />} />
         <Route path = {`/video/:videoId`} element = {<SingleVideoPage />} />
-        <Route path = "club" element = {<CategoryClub />} />
-        <Route path = "country" element = {<CategoryCountry />} />
-        <Route path = "general" element = {<CategoryGeneral />} />
-        <Route path = "playlists" element = {<PlaylistsPage />}/>
+        <Route path = "/club" element = {<CategoryClub />} />
+        <Route path = "/country" element = {<CategoryCountry />} />
+        <Route path = "/general" element = {<CategoryGeneral />} />
+        <Route path = "/playlists" element = {<PlaylistsPage />}/>
         <Route path = {`/playlists/:playlistId`} element = {<SinglePlaylistPage />} />
       </Routes>
     </div>

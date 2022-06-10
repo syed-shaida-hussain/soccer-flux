@@ -22,7 +22,8 @@ const Signin = () => {
         status: true,
         token: encodedToken,
       }));
-    } 
+    }
+    navigate("/videos")
   };
 
   const logout = () =>{
