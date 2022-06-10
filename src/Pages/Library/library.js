@@ -2,6 +2,7 @@ import { useEffect } from "react"
 import axios from "axios"
 import { useAuth } from "../../Contexts/auth-context";
 import {Header} from "../../Components/header"
+import { Sidebar } from "../../Components/sidebar"
 import { useNavigate, Link  } from "react-router-dom";
 import "../Videolisting/videolisting.css"
 import { useServices } from "../../Contexts/service-context";
@@ -31,6 +32,7 @@ const Library = () => {
 return (<div>
   <Header />
   <div className = "main-wrapper">
+    <Sidebar />
 <div>
 
 <hr/>
@@ -42,7 +44,7 @@ return (<div>
             <img src= {video.imgsrc} className = "video" alt=""/>
             <h4 className = "margin">{video.title}</h4>
             <div className = "flex">
-              <img className = "avatar" src={video.imgsrc} alt=""/>
+              <img className = "avatar" src={video.imgsrc} alt="avatar-img"/>
               <p className = "font-small margin" >{video.creator}</p>
             </div>
 
