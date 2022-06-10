@@ -11,6 +11,7 @@ function App() {
         <Route path = "login" element = {<Signin />} />
         <Route path = "signup" element = {<Signup />} />
         <Route path = "videos" element = { <VideoListing />} />
+        <Route path = "library" element = {<Library />}/>
         <Route path = "history" element = { <HistoryPage />} />
         <Route path = {`/video/:videoId`} element = {<SingleVideoPage />} />
         <Route path = "club" element = {<CategoryClub />} />
