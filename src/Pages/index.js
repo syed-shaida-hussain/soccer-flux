@@ -8,5 +8,7 @@ import { CategoryClub } from "./Categories/club-caregory"
 import { CategoryCountry } from "./Categories/country-category"
 import { CategoryGeneral } from "./Categories/general-category"
 import { Home } from "./Homepage/homepage"
+import { PlaylistsPage } from "./PlaylistPage/playlists"
+import { SinglePlaylistPage } from "./SinglePlaylistPage/single-playlist"
 
-export { Signin , Signup , VideoListing , SingleVideoPage , CategoryClub , HistoryPage , CategoryCountry , CategoryGeneral , Home , Library}
+export { Signin , Signup , VideoListing , SingleVideoPage , CategoryClub , HistoryPage , CategoryCountry , CategoryGeneral , Home , Library , PlaylistsPage , SinglePlaylistPage}

@@ -1,5 +1,7 @@
 import "./App.css";
-import { Signin , Signup , VideoListing , SingleVideoPage , CategoryClub , CategoryCountry , Home, CategoryGeneral , HistoryPage , Library } from "./Pages";
+
+import { Signin , Signup , VideoListing , SingleVideoPage , CategoryClub , CategoryCountry , Home, CategoryGeneral , HistoryPage , Library, PlaylistsPage, SinglePlaylistPage} from "./Pages";
+
 import { Routes , Route } from "react-router-dom"
 
 function App() {
@@ -17,6 +19,8 @@ function App() {
         <Route path = "club" element = {<CategoryClub />} />
         <Route path = "country" element = {<CategoryCountry />} />
         <Route path = "general" element = {<CategoryGeneral />} />
+        <Route path = "playlists" element = {<PlaylistsPage />}/>
+        <Route path = {`/playlists/:playlistId`} element = {<SinglePlaylistPage />} />
       </Routes>
     </div>
   );

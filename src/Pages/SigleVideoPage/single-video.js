@@ -6,6 +6,7 @@ import { useAuth } from "../../Contexts/auth-context"
 import { addToLikedService } from "../../Services/addtoliked-service"
 import {addToWatchLaterService} from "../../Services/addtowatchlater-service"
 import { useServices } from "../../Contexts/service-context"
+import { Sidebar } from "../../Components/sidebar"
 
 const SingleVideoPage = () => {
     const { videoId  } = useParams()
@@ -83,7 +84,6 @@ const SingleVideoPage = () => {
     const addPlaylist = async (playlist, token) => {
       await addPlaylistService(playlist, token);
       dispatchVideo({type: "SET_PLAYLISTS" , payload : {playlist , title : playlistName , description : ""}})
-      setIsModalActive(false)
     };
     
 
@@ -108,6 +108,7 @@ const SingleVideoPage = () => {
       }
 
     return (<div className = "flex">
+      <Sidebar />
     <div key = {currVideo._id} className = "single-video-card" >
     <iframe className = "single-video" allowFullScreen = "1" allow = "accelerometer"  src= {currVideo.src+"?autoplay=1&mute=1"} ></iframe>
     <h4 className = "margin">{currVideo.title}</h4>
