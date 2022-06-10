@@ -1,3 +1,3 @@
-## Video Library Backend
+## Soccer Flux
 
-This folder contains the Mock Backend created for Video Library App. It contains different API end-points and database configuration for building Video Library; so that you can focus on building Frontend.
+Soccer Flux is a web app made with reactJs with basic routing , reducer and context. Here you can explore a wide range of football videos. So, bring your snacks and enjoy watching your favourite football videos here at Soccer Flux , the ultimate destination for all the football admirers and lovers. Let's go!
