@@ -63,7 +63,7 @@ const Signin = () => {
             Signin as Guest
           </button>
   
-        <button className="create-account-link"><Link to = "/signup">Create new account ></Link></button>
+        <button className="create-account-link"><Link to = "/signup">Create new account &gt; </Link></button>
     </form>
     </section>
   );
