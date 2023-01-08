@@ -145,19 +145,16 @@ button:hover{
     background-color: var(--ctc-color);
 }
 
-@media (max-width: 415px) {  
+@media only screen and (max-width: 415px) {  
     .search-bar {
         display: none;
     }
 
     .nav-links{
         width: 100%;
-        /* margin: 0.5rem; */
         list-style-type: none;
         margin-block-start: 0;
         margin-block-end: 0em;
-        /* margin-inline-start: 0px;
-        margin-inline-end: 0px; */
         padding-inline-start: 0;
     }
 
@@ -169,7 +166,7 @@ button:hover{
     .home-main {
         font-size: 0.5rem;
         margin-left: 1rem;
-        width: 65ch;
+        width: 60ch;
         padding:  0rem;
     }
 
@@ -179,4 +176,5 @@ button:hover{
         bottom: 9rem;   
         left: 7rem;
     }
+
   }

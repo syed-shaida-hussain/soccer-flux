@@ -40,11 +40,11 @@ const CategoryCountry = () => {
         <Sidebar />
 <div>
 <div className = "chip-container">
-     <button ><Link to = "/videos" className="chip"> Explore</Link></button>
-     <button ><Link to = "/club" className="chip">Club</Link></button>
-     <button ><Link to = "/country" className="chip active-link">Country</Link></button>
-     <button ><Link to = "/general" className="chip">General</Link></button>
-   </div>
+                <button className="chip-button" ><Link to = "/videos" className="chip "> Explore</Link></button>
+                <button className="chip-button" ><Link to = "/club" className="chip">Club</Link></button>
+                <button className="chip-button" ><Link to = "/country" className="chip active-link">Country</Link></button>
+                <button className="chip-button"><Link to = "/general" className="chip">General</Link></button>
+            </div>
 
     <hr/>
     

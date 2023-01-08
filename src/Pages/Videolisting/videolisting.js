@@ -41,10 +41,10 @@ const VideoListing = () => {
           <Sidebar />
             <div>
             <div className = "chip-container">
-                <button ><Link to = "/videos" className="chip active-link"> Explore</Link></button>
-                <button ><Link to = "/club" className="chip">Club</Link></button>
-                <button ><Link to = "/country" className="chip">Country</Link></button>
-                <button ><Link to = "/general" className="chip">General</Link></button>
+                <button className="chip-button" ><Link to = "/videos" className="chip active-link"> Explore</Link></button>
+                <button className="chip-button" ><Link to = "/club" className="chip">Club</Link></button>
+                <button className="chip-button" ><Link to = "/country" className="chip">Country</Link></button>
+                <button className="chip-button"><Link to = "/general" className="chip">General</Link></button>
             </div>
 
                 <hr/>

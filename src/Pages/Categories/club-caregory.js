@@ -39,12 +39,12 @@ const CategoryClub = () => {
         <div className = "main-wrapper">
         <Sidebar />
 <div>
-<div className = "chip-container">
-     <button ><Link to = "/videos" className="chip"> Explore</Link></button>
-     <button ><Link to = "/club" className="chip active-link">Club</Link></button>
-     <button ><Link to = "/country" className="chip">Country</Link></button>
-     <button ><Link to = "/general" className="chip">General</Link></button>
-   </div>
+            <div className = "chip-container">
+                <button className="chip-button" ><Link to = "/videos" className="chip "> Explore</Link></button>
+                <button className="chip-button" ><Link to = "/club" className="chip active-link">Club</Link></button>
+                <button className="chip-button" ><Link to = "/country" className="chip">Country</Link></button>
+                <button className="chip-button"><Link to = "/general" className="chip">General</Link></button>
+            </div>
 
     <hr/>
     
