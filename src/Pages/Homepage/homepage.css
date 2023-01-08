@@ -145,7 +145,7 @@ button:hover{
     background-color: var(--ctc-color);
 }
 
-/* @media (max-width: 415px) {  
+@media (max-width: 415px) {  
     .search-bar {
         display: none;
     }
@@ -172,4 +172,4 @@ button:hover{
         bottom: 10rem;   
         left: 5rem;
     }
-  } */
+  }
