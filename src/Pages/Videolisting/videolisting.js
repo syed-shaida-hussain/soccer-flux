@@ -52,7 +52,7 @@ const VideoListing = () => {
             <main className = "home-main">
             {videoState.videos.map(video => (<div key = {video._id} className = "video-card" onClick = {() => getSingleVideo(video)} >
                         <img src= {video.imgsrc} className = "video" alt=""/>
-                        <h4 className = "margin">{video.title}</h4>
+                        <h2 className = "margin title">{video.title}</h2>
                         <div className = "flex">
                         <img className = "avatar" src={video.imgsrc} alt=""/>
                         <p className = "font-small margin" >{video.creator}</p>

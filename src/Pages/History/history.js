@@ -5,6 +5,7 @@ import {Header} from "../../Components/header"
 import { useEffect } from "react"
 import { useServices } from "../../Contexts/service-context"
 import { Sidebar } from "../../Components/sidebar"
+import "../Videolisting/videolisting.css"
 
 const HistoryPage = () => {
     const { videoState , dispatchVideo} = useServices()
@@ -60,7 +61,7 @@ const HistoryPage = () => {
       <hr/>
       
       <main >
-      <h2 className = "margin">History ({videoState.historyVideos.length}) |</h2>
+      <h2 className = "margin heading">History ({videoState.historyVideos.length}) |</h2>
       <div className = "clear-history-btn-container" >
          <button className = "clear-history-btn" onClick = {() => deleteAllHistoryVideos()}>Clear all History videos</button>
      </div>

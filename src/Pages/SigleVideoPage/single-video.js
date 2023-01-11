@@ -6,7 +6,6 @@ import { useAuth } from "../../Contexts/auth-context"
 import { addToLikedService } from "../../Services/addtoliked-service"
 import {addToWatchLaterService} from "../../Services/addtowatchlater-service"
 import { useServices } from "../../Contexts/service-context"
-import { Sidebar } from "../../Components/sidebar"
 
 const SingleVideoPage = () => {
     const { videoId  } = useParams()
@@ -108,19 +107,18 @@ const SingleVideoPage = () => {
       }
 
     return (<div className = "flex">
-      <Sidebar />
     <div key = {currVideo._id} className = "single-video-card" >
     <iframe className = "single-video" allowFullScreen = "1" allow = "accelerometer"  src= {currVideo.src+"?autoplay=1&mute=1"} ></iframe>
-    <h4 className = "margin">{currVideo.title}</h4>
+    <h4 className = "margin title">{currVideo.title}</h4>
     <div className = "flex">
         <img className = "avatar" src={currVideo.imgsrc} alt=""/>
       <p className = "font-small margin" >{currVideo.creator}</p>
     </div>
     { isModalActive && <div className = "modal-card">
         <input type = "text" placeholder = "enter new playlist name" onChange = {(e) => setPlaylistName(e.target.value)} />
-        <div><button onClick = {() => addPlaylist()}>Add new playlist</button></div>
+        <div className="add-playlist-btn"><button onClick = {() => addPlaylist()}>Add new playlist</button></div>
         {videoState.playlists.map(playlist => <div>
-          <button  onClick = {() => addVideoToPlaylist( playlist , currVideo )}>Add to {playlist.title}</button>
+          <button className="add-playlist-btn"  onClick = {() => addVideoToPlaylist( playlist , currVideo )}>Add to {playlist.title}</button>
       </div>)}
         
     </div> }

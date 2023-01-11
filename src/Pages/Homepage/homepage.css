@@ -19,7 +19,6 @@ body , * {
 .nav-links {
     background-color: var(--ctc-color);
     display: flex;
-    align-items: center;
     justify-content: space-between;
     align-items: center;
     color : var(--white-color);
@@ -156,6 +155,8 @@ button:hover{
         margin-block-start: 0;
         margin-block-end: 0em;
         padding-inline-start: 0;
+        padding-inline-end: 0;
+
     }
 
     .sidebar-link{
@@ -174,7 +175,7 @@ button:hover{
         max-width: 5rem;
         position: relative;
         bottom: 9rem;   
-        left: 7rem;
+        left: 11.5rem;
     }
 
   }

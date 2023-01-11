@@ -48,7 +48,7 @@ const PlaylistsPage = () => {
       <hr/>
       
       <main >
-      <h2 className = "margin-top-bottom">My Playlists ({videoState.playlists.length}) |</h2>
+      <h2 className = "margin-top-bottom heading">My Playlists ({videoState.playlists.length}) |</h2>
   
   {videoState.playlists.length > 0 ? <div className = "services margin-top-bottom ">
   {videoState.playlists.map(playlist => (<div key = {playlist._id} className = "video-card"  >

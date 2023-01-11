@@ -38,7 +38,7 @@ return (<div>
 <hr/>
 
 <main >
-<h2 className = "margin">Liked videos ({videoState.likedVideos.length}) |</h2>
+<h2 className = "margin heading">Liked videos ({videoState.likedVideos.length}) |</h2>
 {videoState.likedVideos.length > 0 ? <div className = "services margin-top-bottom">
 {videoState.likedVideos.map(video => (<div key = {video._id} className = "video-card" onClick = {() => getSingleVideo(video)} >
             <img src= {video.imgsrc} className = "video" alt=""/>
@@ -47,7 +47,6 @@ return (<div>
               <img className = "avatar" src={video.imgsrc} alt="avatar-img"/>
               <p className = "font-small margin" >{video.creator}</p>
             </div>
-
         </div>))}
   </div> : <div className = "explore-suggestion margin margin-top-bottom">Like some videos . Your list will be shown right here.
  <div className = "explore-btn"><Link to = "/videos" className = "link highlighted">Explore</Link></div> </div> }
