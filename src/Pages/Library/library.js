@@ -37,7 +37,7 @@ return (<div>
 
 <hr/>
 
-<main >
+<main className="library-container" >
 <h2 className = "margin heading">Liked videos ({videoState.likedVideos.length}) |</h2>
 {videoState.likedVideos.length > 0 ? <div className = "services margin-top-bottom">
 {videoState.likedVideos.map(video => (<div key = {video._id} className = "video-card" onClick = {() => getSingleVideo(video)} >

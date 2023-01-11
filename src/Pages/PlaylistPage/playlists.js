@@ -47,7 +47,7 @@ const PlaylistsPage = () => {
       
       <hr/>
       
-      <main >
+      <main className="library-container" >
       <h2 className = "margin-top-bottom heading">My Playlists ({videoState.playlists.length}) |</h2>
   
   {videoState.playlists.length > 0 ? <div className = "services margin-top-bottom ">

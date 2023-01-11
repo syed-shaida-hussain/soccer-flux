@@ -63,8 +63,7 @@ const HistoryPage = () => {
       <main >
       <h2 className = "margin heading">History ({videoState.historyVideos.length}) |</h2>
       <div className = "clear-history-btn-container" >
-         <button className = "clear-history-btn" onClick = {() => deleteAllHistoryVideos()}>Clear all History videos</button>
-     </div>
+      {videoState.historyVideos.length > 0 && <button className = "clear-history-btn" onClick = {() => deleteAllHistoryVideos()}>Clear all History videos</button>}     </div>
     {videoState.historyVideos.length > 0 ? <div className = "services margin-top-bottom">
       { videoState.historyVideos.map((video) => ( <div key = {video._id}>
         <div  className = "video-card">
