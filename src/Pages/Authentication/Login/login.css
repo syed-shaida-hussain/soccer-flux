@@ -49,6 +49,15 @@
   
   .logout-btn-container{
     text-align: right;
+    margin-right: 1rem;
+  }
+
+  .logout-btn {
+    padding:  0.7rem 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 5px;
+
   }
   
   .password-info {
@@ -79,4 +88,13 @@
     text-decoration: none;
     color: var(--primary-color);
     background: none;
+  }
+
+  /* .logout-b */
+
+  @media only screen and (max-width: 415px) {  
+    .page-wrapper {
+      width: 80vw;
+    }
+
   }

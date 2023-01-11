@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useAuth } from "../../../Contexts/auth-context";
-import {useNavigate} from "react-router-dom"
+import {useNavigate , Link} from "react-router-dom"
 import { signupService } from "../../../Services/signup-service";
 import "../Login/login.css";
 
@@ -58,7 +58,10 @@ const Signup = () => {
               onChange={e => setUser({ ...user, password: e.target.value })} required />
   
         <button class="login-button" type = "submit">Signup</button>
+        <button className="create-account-link"><Link to = "/login">Already a user &gt; </Link></button>
+
     </form>
+
     </section>
   );
 };
