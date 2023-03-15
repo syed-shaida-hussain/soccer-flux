@@ -8,8 +8,8 @@ import { useServices } from "../../Contexts/service-context"
 
 
 const PlaylistsPage = () => {
-    const { videoState , dispatchVideo } = useServices()
-    
+    const { videoState , dispatchVideo } = useServices();
+
     const { 
         auth: { token  } ,
       }  = useAuth()
@@ -50,9 +50,14 @@ const PlaylistsPage = () => {
       <main className="library-container" >
       <h2 className = "margin-top-bottom heading">My Playlists ({videoState.playlists.length}) |</h2>
   
-  {videoState.playlists.length > 0 ? <div className = "services margin-top-bottom ">
-  {videoState.playlists.map(playlist => (<div key = {playlist._id} className = "video-card"  >
-            <h4  onClick = {() => getSinglePlaylist(playlist)} className = "margin margin-more  playlist-name">{playlist.title}</h4>
+  {videoState.playlists.length > 0 ? <div className = "video-card ">
+  {videoState.playlists.map(playlist => (<div key = {playlist._id} onClick = {() => getSinglePlaylist(playlist)} className = "video-card"  >
+            <img className="video" src = {playlist.videos[0]?.imgsrc} />
+            <h4   className = "margin">{playlist.title}</h4>
+            <div className = "flex">
+                  <img className = "avatar" src={playlist.videos[0].imgsrc} alt=""/>
+                  <p className = "font-small margin" >{playlist.videos[0].creator}</p>
+                </div>
             <span class="material-icons delete-icon" onClick = {() => deletePlaylist(playlist)}>delete</span> 
         </div>))}
        

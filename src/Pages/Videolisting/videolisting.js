@@ -3,19 +3,23 @@ import axios from "axios"
 import { useEffect } from "react"
 import "../Videolisting/videolisting.css"
 import {Sidebar} from "../../Components/sidebar"
-import {useNavigate , Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { useAuth } from "../../Contexts/auth-context"
 import { useServices } from "../../Contexts/service-context"
+import { useFilters } from "../../Contexts/filter-context"
 
 const VideoListing = () => {
     const {auth : {token}} = useAuth()
-    const {videoState , dispatchVideo} = useServices()
- 
-    const navigate = useNavigate()
+    const {videoState , dispatchVideo} = useServices(); 
+    const {filterState,dispatchFilter} = useFilters();
+    const navigate = useNavigate();
   
     useEffect(() => {
       axios.get("/api/videos").then((res) => {
         dispatchVideo({type : "GET_VIDEOS" , payload : res.data.videos})
+      })
+      axios.get("/api/categories").then((res) => {
+        dispatchVideo({type : "GET_CATEGORIES" , payload : res.data.categories})
       })
     },[])
 
@@ -29,10 +33,17 @@ const VideoListing = () => {
       }
     }
 
-      const getSingleVideo = async (video, token) => {
-        await addToHistoryService(video , token)
-        dispatchVideo({type : "SET_HISTORY_VIDEOS" , payload : video})
-        navigate(`/video/${video._id}`)
+    const filteredVideos = filterState.filteredCategory === "All" ? videoState.videos: videoState.videos.filter((video) => video.category === filterState.filteredCategory)
+
+
+    const getSingleVideo = async (video,token) => {
+      navigate(`/video/${video._id}`)    
+      videoState.historyVideos.find((historyVideo) => historyVideo._id === video._id) ? "" : await addToHistoryService(video , token) &&
+      dispatchVideo({type : "SET_HISTORY_VIDEOS" , payload : video})
+    }
+
+    const filterVideos = (category) => {
+      dispatchFilter({type : "FILTER_VIDEOS" , payload : category.categoryName});
     }
 
     return(<div>
@@ -41,16 +52,12 @@ const VideoListing = () => {
           <Sidebar />
             <div>
             <div className = "chip-container">
-                <button className="chip-button" ><Link to = "/videos" className="chip active-link"> Explore</Link></button>
-                <button className="chip-button" ><Link to = "/club" className="chip">Club</Link></button>
-                <button className="chip-button" ><Link to = "/country" className="chip">Country</Link></button>
-                <button className="chip-button"><Link to = "/general" className="chip">General</Link></button>
+                {videoState.categories.map((category) => <button key={category._id} className = {filterState.filteredCategory === category.categoryName ? "active-link chip-button chip" : "chip-button chip"} onClick={() => filterVideos(category)} >{category.categoryName}</button> )}
             </div>
-
-                <hr/>
+              <hr/>
                 
             <main className = "home-main">
-            {videoState.videos.map(video => (<div key = {video._id} className = "video-card" onClick = {() => getSingleVideo(video)} >
+            {filteredVideos.map(video => (<div key = {video._id} className = "video-card" onClick = {() => getSingleVideo(video)} >
                         <img src= {video.imgsrc} className = "video" alt=""/>
                         <h2 className = "margin title">{video.title}</h2>
                         <div className = "flex">

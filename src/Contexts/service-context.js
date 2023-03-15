@@ -5,6 +5,8 @@ import { createContext, useContext, useReducer } from "react";
      switch (action.type) {
         case "GET_VIDEOS" : 
             return {...state , videos : (state.videos , action.payload)}
+        case "GET_CATEGORIES" : 
+            return {...state , categories : (state.categories , action.payload)}
         case "SET_LIKED_VIDEOS" :
             return {...state , likedVideos : [...state.likedVideos , action.payload] }
         case "DELETE_LIKED_VIDEOS" :
@@ -33,6 +35,8 @@ import { createContext, useContext, useReducer } from "react";
             return {...state , playlistVideos : [...state.playlistVideos , action.payload]}
         case "DELETE_PLAYLIST_VIDEOS" :
             return {...state , playlistVideos : (state.playlistVideos.filter(playlist => playlist._id !== action.payload._id))}
+        case "RESET_USER_DATA" :
+            return {...state , likedVideos : [] , watchLater : [] , playlists :[] , historyVideos : [] , playlistVideos : []}
         default :
             return {...state }
      }
@@ -40,7 +44,7 @@ import { createContext, useContext, useReducer } from "react";
 
 
  const ServiceProvider = ({children}) => {
-    const [videoState  , dispatchVideo] = useReducer(serviceReducer ,  {videos : [] , likedVideos : [] , watchLater : [] , playlists: [] , historyVideos : [] , playlistVideos : [] })
+    const [videoState  , dispatchVideo] = useReducer(serviceReducer ,  {videos : [] , categories :[], likedVideos : [] , watchLater : [] , playlists: [] , historyVideos : [] , playlistVideos : [] })
 
     return <ServiceContext.Provider value = {{ videoState , dispatchVideo }}>
         {children}

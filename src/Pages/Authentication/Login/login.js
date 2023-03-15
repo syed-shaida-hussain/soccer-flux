@@ -26,16 +26,9 @@ const Signin = () => {
     navigate("/videos")
   };
 
-  const logout = () =>{
-    window.location.reload(true)
-    localStorage.removeItem("AUTH_TOKEN")
-  }
+
   return (
     <section >
-      <div className = "logout-btn-container">
-         <button className = "logout-btn" onClick = {() => logout()}> Logout</button>
-      </div>
-
       <form className="page-wrapper flex-page"   onSubmit={e => {
           e.preventDefault();
           signinSubmitHandler(user);

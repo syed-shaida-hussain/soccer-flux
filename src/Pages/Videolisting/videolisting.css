@@ -22,6 +22,10 @@
     margin-bottom: 1rem;
 }
 
+.video-card:hover {
+    cursor: pointer;
+}
+
 .nav-links{
     background-color: var(--ctc-color);
     display: flex;
@@ -132,6 +136,10 @@
     margin-left: 0.5rem;
 }
 
+.m1{
+    margin: 0.5rem 0rem;
+}
+
 .margin-top-bottom{
     margin: 1rem;
 }
@@ -173,6 +181,12 @@
 .playlist-name{
     border: 1px solid var(--black-color);
     padding: 1rem;
+}
+
+.General{
+    background-color: var(--ctc-color);
+    color: white;
+    padding: 0.3rem 0.5rem;
 }
 
 

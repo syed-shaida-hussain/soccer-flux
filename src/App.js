@@ -16,9 +16,6 @@ function App() {
         <Route path = "/library" element = {<Library />}/>
         <Route path = "/history" element = { <HistoryPage />} />
         <Route path = {`/video/:videoId`} element = {<SingleVideoPage />} />
-        <Route path = "/club" element = {<CategoryClub />} />
-        <Route path = "/country" element = {<CategoryCountry />} />
-        <Route path = "/general" element = {<CategoryGeneral />} />
         <Route path = "/playlists" element = {<PlaylistsPage />}/>
         <Route path = {`/playlists/:playlistId`} element = {<SinglePlaylistPage />} />
       </Routes>

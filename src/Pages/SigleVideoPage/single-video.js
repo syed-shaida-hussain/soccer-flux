@@ -6,6 +6,9 @@ import { useAuth } from "../../Contexts/auth-context"
 import { addToLikedService } from "../../Services/addtoliked-service"
 import {addToWatchLaterService} from "../../Services/addtowatchlater-service"
 import { useServices } from "../../Contexts/service-context"
+import { Sidebar } from "../../Components/sidebar"
+import { Header } from "../../Components/header"
+import { Suggestions } from "../../Components/suggestions"
 
 const SingleVideoPage = () => {
     const { videoId  } = useParams()
@@ -83,6 +86,7 @@ const SingleVideoPage = () => {
     const addPlaylist = async (playlist, token) => {
       await addPlaylistService(playlist, token);
       dispatchVideo({type: "SET_PLAYLISTS" , payload : {playlist , title : playlistName , description : ""}})
+      setPlaylistName("")
     };
     
 
@@ -106,7 +110,10 @@ const SingleVideoPage = () => {
         dispatchVideo({type : "DELETE_WATCHLATER_VIDEOS" , payload : currVideo})
       }
 
-    return (<div className = "flex">
+    return (<div >
+      <Header/>
+      <div className = "flex-page">
+      <Sidebar/>
     <div key = {currVideo._id} className = "single-video-card" >
     <iframe className = "single-video" allowFullScreen = "1" allow = "accelerometer"  src= {currVideo.src+"?autoplay=1&mute=1"} ></iframe>
     <h4 className = "margin title">{currVideo.title}</h4>
@@ -115,9 +122,15 @@ const SingleVideoPage = () => {
       <p className = "font-small margin" >{currVideo.creator}</p>
     </div>
     { isModalActive && <div className = "modal-card">
-        <input type = "text" placeholder = "enter new playlist name" onChange = {(e) => setPlaylistName(e.target.value)} />
-        <div className="add-playlist-btn"><button onClick = {() => addPlaylist()}>Add new playlist</button></div>
-        {videoState.playlists.map(playlist => <div>
+      <form onSubmit={(e) => {
+        e.preventDefault();
+        addPlaylist()
+      }}>
+      <input value={playlistName} className="input" required type = "text" placeholder = "Enter New Playlist name" onChange = {(e) => setPlaylistName(e.target.value)} />
+      <div ><button className="add-playlist-btn" type="submit">Add new playlist</button></div>
+      </form>
+
+        {videoState.playlists.map(playlist => <div key={playlist._id}>
           <button className="add-playlist-btn"  onClick = {() => addVideoToPlaylist( playlist , currVideo )}>Add to {playlist.title}</button>
       </div>)}
         
@@ -143,16 +156,20 @@ const SingleVideoPage = () => {
       }  className= "material-symbols-outlined">schedule</span> }
 </button>
 
-<button className = "like-button">{videoState.playlists.find(item => item._id === currVideo._id) ? <span onClick={() =>
+<button className = "like-button">{videoState.playlists?.find(item => item?.videos?.find((video) => video._id=== currVideo._id)) ? <span onClick={() =>
         status
           ? setIsModalActive(!isModalActive)
           : navigate("/login")
-      }  className= "material-icons red" >playlist_add_check</span> : <span onClick={() => setIsModalActive(!isModalActive)
+      }  className= "material-symbols-outlined red" >playlist_add_check</span> : <span onClick={() => setIsModalActive(!isModalActive)
       }  className= "material-symbols-outlined">playlist_add</span> }
 </button>
+
 </div>
-<div className = "font-small margin margin-top-bottom">{currVideo.description}</div>
-</div></div>) 
+<div className = "description font-small margin margin-top-bottom">{currVideo.description}</div>
+</div>
+<Suggestions/>
+  </div>
+</div>) 
        
 }
 

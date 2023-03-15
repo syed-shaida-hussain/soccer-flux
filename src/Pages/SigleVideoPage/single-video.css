@@ -8,10 +8,18 @@
     align-items: center;
 }
 
+.flex-page{
+    display: flex;
+}
+
 .single-video-card{
-    margin: 1rem auto;
-    width: 90%;
+    margin: 1rem;
+    width: 100%;
     margin-bottom : 1rem;
+}
+
+.description{
+    width: 70%;
 }
 
 .single-video {
@@ -42,7 +50,7 @@
 }
 
 .red{
-    color: rgb(212, 54, 54);
+    color: var(--ctc-color);
 }
 
 .title{
@@ -60,7 +68,7 @@
 .modal-card{
     border: 1px solid black;
     width: fit-content;
-    height: 10rem;
+    min-height: 10rem;
     position: absolute;
     background-color: white;
     left: 8rem;
@@ -80,8 +88,18 @@
 }
 
 .add-playlist-btn{
-    margin-left: 1rem;
+    margin-left: 0.5rem;
     margin-top: 0.3rem;
+    background-color: var(--ctc-color);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 5px;
+
+}
+
+.input{
+    padding: 0.5rem;
+    outline: none;
 }
 
 @media only screen and (max-width: 415px) {  

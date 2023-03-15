@@ -1,8 +1,7 @@
 :root {
     --body-bg-color:rgb(243, 243, 243);
     --page-bg-color :white;
-    --gray-color:gray;
-    --primary-color : rgb(56, 56, 163);
+    --gray-color:rgb(180, 176, 176);
   }
   
   body {
@@ -46,18 +45,12 @@
     margin-bottom: 1rem;
     padding-left: 5px;
   }
-  
-  .logout-btn-container{
-    text-align: right;
-    margin-right: 1rem;
-  }
 
   .logout-btn {
     padding:  0.7rem 1rem;
-    background-color: var(--primary-color);
-    color: white;
+    background-color: var(--body-bg-color);
+    color: var(--ctc-color);
     border-radius: 5px;
-
   }
   
   .password-info {
@@ -67,15 +60,16 @@
   
   .login-button,
   .signup-btn {
-    padding: 0.6rem;
+    padding: 0.5rem;
     border: none;
-    background-color: var(--primary-color);
+    background-color: var(--ctc-color);
     color: var(--page-bg-color);
     font-size: 1rem;
   }
   
   .signin-guest-btn{
-    background-color: var(--gray-color);
+    background-color: var(--body-color);
+    color: var(--ctc-color);
     padding: 0.5rem;
     margin-top: 0.5rem;
     font-size: 1rem;
@@ -89,8 +83,6 @@
     color: var(--primary-color);
     background: none;
   }
-
-  /* .logout-b */
 
   @media only screen and (max-width: 415px) {  
     .page-wrapper {
