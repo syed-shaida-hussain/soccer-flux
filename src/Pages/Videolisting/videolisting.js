@@ -35,6 +35,8 @@ const VideoListing = () => {
 
     const filteredVideos = filterState.filteredCategory === "All" ? videoState.videos: videoState.videos.filter((video) => video.category === filterState.filteredCategory)
 
+    const searchedVideos = filterState.searchQuery === "" ? filteredVideos : filteredVideos.filter((video) => video.title.toLowerCase().includes(filterState.searchQuery.toLowerCase()))
+
 
     const getSingleVideo = async (video,token) => {
       navigate(`/video/${video._id}`)    
@@ -57,7 +59,7 @@ const VideoListing = () => {
               <hr/>
                 
             <main className = "home-main">
-            {filteredVideos.map(video => (<div key = {video._id} className = "video-card" onClick = {() => getSingleVideo(video)} >
+            {searchedVideos.map(video => (<div key = {video._id} className = "video-card" onClick = {() => getSingleVideo(video)} >
                         <img src= {video.imgsrc} className = "video" alt=""/>
                         <h2 className = "margin title">{video.title}</h2>
                         <div className = "flex">
