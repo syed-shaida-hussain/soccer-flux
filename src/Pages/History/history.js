@@ -63,10 +63,10 @@ const HistoryPage = () => {
       <main >
       <h2 className = "margin heading">History ({videoState.historyVideos.length}) |</h2>
       <div className = "clear-history-btn-container" >
-      {videoState.historyVideos.length > 0 && <button className = "clear-history-btn" onClick = {() => deleteAllHistoryVideos()}>Clear all History videos</button>}     </div>
+    {videoState.historyVideos.length > 0 && <button className = "clear-history-btn" onClick = {() => deleteAllHistoryVideos()}>Clear all History videos</button>}     </div>
     {videoState.historyVideos.length > 0 ? <div className = "services margin-top-bottom">
-      { videoState.historyVideos.map((video) => ( <div key = {video._id}>
-        <div  className = "video-card">
+      { videoState.historyVideos.map((video) => ( 
+        <div key = {video._id}  className = "video-card">
           <div onClick = {() => getSingleVideo(video)}>
                 <img src= {video.imgsrc} className = "video" alt=""/>
                 <h4 className = "margin">{video.title}</h4>
@@ -76,7 +76,7 @@ const HistoryPage = () => {
                 </div>
                 </div>
                 <span className = "material-icons delete-icon" onClick = {() => deleteFromHistory(video)}>delete</span></div> 
-            </div> ))}
+             ))}
      </div> : <div className = "explore-suggestion margin margin-top-bottom">Watch some videos . Your list will be shown right here.
     <div className = "explore-btn"><Link to = "/videos" className = "link highlighted">Explore</Link></div> </div> }
       </main>

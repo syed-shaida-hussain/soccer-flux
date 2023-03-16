@@ -5,6 +5,10 @@ import { createContext, useContext, useReducer } from "react";
      switch (action.type) {
         case "GET_VIDEOS" : 
             return {...state , videos : (state.videos , action.payload)}
+        case "GET_LIKED_VIDEOS" : 
+            return {...state , likedVideos : (state.likedVideos , action.payload)}
+        case "GET_WATCHLATER_VIDEOS" : 
+            return {...state , watchLater : (state.watchLater , action.payload)}
         case "GET_CATEGORIES" : 
             return {...state , categories : (state.categories , action.payload)}
         case "SET_LIKED_VIDEOS" :

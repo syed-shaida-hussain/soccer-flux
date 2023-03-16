@@ -4,7 +4,7 @@ const addToWatchLaterService = async ( video ,token ) => {
     try {
         await axios.post(
           "/api/user/watchlater",
-            {video},
+            {video : video},
           {
             headers: { authorization: token },
           } 

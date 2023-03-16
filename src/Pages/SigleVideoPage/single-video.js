@@ -11,17 +11,17 @@ import { Header } from "../../Components/header"
 import { Suggestions } from "../../Components/suggestions"
 
 const SingleVideoPage = () => {
-    const { videoId  } = useParams()
-    const [currVideo, setCurrVideo ] = useState({})
+    const { videoId  } = useParams();
+    const [currVideo, setCurrVideo ] = useState({});
     const { 
         auth: { status , token } ,
-      }  = useAuth()
+      }  = useAuth();
   
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     
-    const [isModalActive , setIsModalActive] = useState(false)
-    const [playlistName , setPlaylistName] = useState("")
-    const {videoState , dispatchVideo} = useServices()
+    const [isModalActive , setIsModalActive] = useState(false);
+    const [playlistName , setPlaylistName] = useState("");
+    const {videoState , dispatchVideo} = useServices();
 
     useEffect(() => {
         axios.get(`/api/video/${videoId}`).then(res => {
@@ -124,7 +124,7 @@ const SingleVideoPage = () => {
     { isModalActive && <div className = "modal-card">
       <form onSubmit={(e) => {
         e.preventDefault();
-        addPlaylist()
+        addPlaylist();
       }}>
       <input value={playlistName} className="input" required type = "text" placeholder = "Enter New Playlist name" onChange = {(e) => setPlaylistName(e.target.value)} />
       <div ><button className="add-playlist-btn" type="submit">Add new playlist</button></div>

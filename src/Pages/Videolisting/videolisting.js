@@ -27,14 +27,13 @@ const VideoListing = () => {
       try {
         await axios.post(
           "/api/user/history" ,
-            {video}  , { headers : {authorization : token}})
+            {video : video}  , { headers : {authorization : token}})
       } catch(e){
         console.log(e)
       }
     }
 
     const filteredVideos = filterState.filteredCategory === "All" ? videoState.videos: videoState.videos.filter((video) => video.category === filterState.filteredCategory)
-
     const searchedVideos = filterState.searchQuery === "" ? filteredVideos : filteredVideos.filter((video) => video.title.toLowerCase().includes(filterState.searchQuery.toLowerCase()))
 
 

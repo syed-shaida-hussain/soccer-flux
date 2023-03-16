@@ -4,7 +4,7 @@ import axios from "axios";
         try {
             await axios.post(
               "/api/user/likes",
-                {video},
+                {video : video},
               {
                 headers: { authorization: token },
               } 
