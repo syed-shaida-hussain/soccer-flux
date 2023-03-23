@@ -29,7 +29,7 @@ const VideoListing = () => {
           "/api/user/history" ,
             {video : video}  , { headers : {authorization : token}})
       } catch(e){
-        console.log(e)
+        console.log(e.response.data)
       }
     }
 
@@ -37,10 +37,10 @@ const VideoListing = () => {
     const searchedVideos = filterState.searchQuery === "" ? filteredVideos : filteredVideos.filter((video) => video.title.toLowerCase().includes(filterState.searchQuery.toLowerCase()))
 
 
-    const getSingleVideo = async (video,token) => {
-      navigate(`/video/${video._id}`)    
-      videoState.historyVideos.find((historyVideo) => historyVideo._id === video._id) ? "" : await addToHistoryService(video , token) &&
+    const getSingleVideo = async (video) => {
+      videoState.historyVideos.find((historyVideo) => historyVideo._id === video._id) ? navigate(`/video/${video._id}`)  : await addToHistoryService(video)
       dispatchVideo({type : "SET_HISTORY_VIDEOS" , payload : video})
+      navigate(`/video/${video._id}`)    
     }
 
     const filterVideos = (category) => {

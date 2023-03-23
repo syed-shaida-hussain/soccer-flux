@@ -86,13 +86,14 @@
 }
 
 .video {
+    position: relative;
     width: 17rem;
     height: 8rem;
 }
 
 .home-main {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     padding:  1rem;
     width: 90vw;
     height: 75vh;
@@ -109,7 +110,6 @@
 
 .home-main{
     flex-wrap: wrap;
-    justify-content: space-around;
 }
 
 .heading{
@@ -187,6 +187,39 @@
     background-color: var(--ctc-color);
     color: white;
     padding: 0.3rem 0.5rem;
+}
+
+.empty-img{
+    background-color: red;
+}
+
+.playlists{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.playlist-delete-icon{
+    cursor: pointer;
+    position: relative;
+    left: 14.5rem;
+    bottom: 3.5rem;
+}
+
+.playlist-img-container{
+    justify-content: center;
+    position: relative;
+    width: 8.5rem;
+    height: 7.7rem;
+    left: 8.5rem;
+    bottom: 4rem;
+    background-color: var(--black-color);
+    color: var(--white-color);
+    margin-top: -8rem;
+    margin-right: -8.5rem;
+}
+
+.playlist-img{
+    font-size: 3rem;
 }
 
 

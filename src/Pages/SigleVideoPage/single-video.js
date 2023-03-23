@@ -50,13 +50,13 @@ const SingleVideoPage = () => {
   }
 
   
-  const addPlaylistService = async ( playlist ) => {
+  const addPlaylistService = async () => {
     try  {
     
         await axios.post(
           "/api/user/playlists",
           {
-            playlist: { ...playlist , title: playlistName, description:"description"}
+            playlist: { title: playlistName }
           },
           {
             headers: { authorization: token },
@@ -76,16 +76,14 @@ const SingleVideoPage = () => {
       }
     }
 
-
     const addVideoToPlaylist = async (playlist) => {
       await addVideoToPlaylistService( playlist)
-      dispatchVideo({type: "SET_PLAYLIST_VIDEOS" , payload : currVideo})
       setIsModalActive(false)
     }
 
     const addPlaylist = async (playlist, token) => {
       await addPlaylistService(playlist, token);
-      dispatchVideo({type: "SET_PLAYLISTS" , payload : {playlist , title : playlistName , description : ""}})
+      dispatchVideo({type: "SET_PLAYLISTS" , payload : playlistName})
       setPlaylistName("")
     };
     

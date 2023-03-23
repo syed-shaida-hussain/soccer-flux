@@ -1,5 +1,5 @@
 import { useParams , useNavigate , Link } from "react-router-dom"
-import { useEffect  } from "react"
+import { useEffect, useState  } from "react"
 import axios from "axios"
 import "../SigleVideoPage/single-video.css"
 import { useAuth } from "../../Contexts/auth-context"
@@ -8,22 +8,22 @@ import {Header} from "../../Components/header"
 import { useServices } from "../../Contexts/service-context"
 
 const SinglePlaylistPage = () => {
-    const { playlistId } = useParams()
+    const  {playlistId} = useParams();
     const { 
-        auth: { status , token } ,
+        auth: { token } ,
       }  = useAuth()
   
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
-    const { videoState , dispatchVideo } = useServices()
+    const { videoState } = useServices();
+    const [singlePlaylistVideos , setSinglePlaylistVideos] = useState([])
+    const currentPlaylist = videoState.playlists.find((playlist) => playlist._id === playlistId)
 
     useEffect(() => {
-        axios.get(`/api/user/playlists/${playlistId}` , {headers : {authorization : token}}).then(res => {
-          dispatchVideo({type : "GET_PLAYLIST_VIDEOS" , payload : res.data.playlist.videos})
-        })
+          setSinglePlaylistVideos(currentPlaylist?.videos)
     },[])
 
-    const getSingleVideo = async (video, token) => {
+    const getSingleVideo = async (video) => {
       navigate(`/video/${video._id}`)
   }
 
@@ -37,7 +37,7 @@ const SinglePlaylistPage = () => {
 
   const deleteVideoFromPlaylist = async (video) => {
     await deleteVideoFromPlaylistService(video)
-    dispatchVideo({type : "DELETE_PLAYLIST_VIDEOS" , payload : video})
+    setSinglePlaylistVideos(singlePlaylistVideos.filter((playlistVideo)=> playlistVideo._id !== video._id))
   }
 
   return (<div>
@@ -48,7 +48,7 @@ const SinglePlaylistPage = () => {
     
 <main className = "home-main">
   
-{ videoState.playlistVideos.length > 0 ? videoState.playlistVideos.map(video => (<div key = {video._id} className = "video-card" >
+{ singlePlaylistVideos?.length > 0 ? singlePlaylistVideos?.map(video => (<div key = {video._id} className = "video-card" >
             <div onClick = {() => getSingleVideo(video)}>
             <img src= {video.imgsrc} className = "video" alt=""/>
             <h4 className = "margin">{video.title}</h4>
@@ -57,7 +57,7 @@ const SinglePlaylistPage = () => {
               <p className = "font-small margin" >{video.creator}</p>
             </div>
             </div>
-            <span class="material-icons delete-icon" onClick = {() => deleteVideoFromPlaylist(video)}>delete</span> 
+            <span className="material-icons delete-icon" onClick = {() => deleteVideoFromPlaylist(video)}>delete</span> 
         </div>)) :  <div className = "explore-suggestion margin margin-top-bottom">Playlist Empty . Add some videos to playlist
  <div className = "explore-btn"><Link to = "/videos" className = "link highlighted">Explore</Link></div> </div>}
 </main>
