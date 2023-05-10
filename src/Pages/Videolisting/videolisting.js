@@ -60,10 +60,13 @@ const VideoListing = () => {
             <main className = "home-main">
             {searchedVideos.map(video => (<div key = {video._id} className = "video-card" onClick = {() => getSingleVideo(video)} >
                         <img src= {video.imgsrc} className = "video" alt=""/>
-                        <h2 className = "margin title">{video.title}</h2>
                         <div className = "flex">
                         <img className = "avatar" src={video.imgsrc} alt=""/>
-                        <p className = "font-small margin" >{video.creator}</p>
+                        <div className = "margin">
+                        <p className = " title">{video.title}</p>
+                        <p className = "font-small " >{video.creator}</p>
+                        </div>
+                      
                         </div>
                     </div>))}
             </main>

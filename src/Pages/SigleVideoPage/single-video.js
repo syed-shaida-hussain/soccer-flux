@@ -2,6 +2,7 @@ import { useParams , useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react"
 import axios from "axios"
 import "../SigleVideoPage/single-video.css"
+import "../Videolisting/videolisting.css"
 import { useAuth } from "../../Contexts/auth-context"
 import { addToLikedService } from "../../Services/addtoliked-service"
 import {addToWatchLaterService} from "../../Services/addtowatchlater-service"
@@ -114,11 +115,14 @@ const SingleVideoPage = () => {
       <Sidebar/>
     <div key = {currVideo._id} className = "single-video-card" >
     <iframe className = "single-video" allowFullScreen = "1" allow = "accelerometer"  src= {currVideo.src+"?autoplay=1&mute=1"} ></iframe>
-    <h4 className = "margin title">{currVideo.title}</h4>
     <div className = "flex">
-        <img className = "avatar" src={currVideo.imgsrc} alt=""/>
-      <p className = "font-small margin" >{currVideo.creator}</p>
-    </div>
+                        <img className = "avatar" src={currVideo.imgsrc} alt=""/>
+                        <div className = "margin">
+                        <p className = " title">{currVideo.title}</p>
+                        <p className = "font-small " >{currVideo.creator}</p>
+                        </div>
+                      
+                        </div>
     { isModalActive && <div className = "modal-card">
       <form onSubmit={(e) => {
         e.preventDefault();

@@ -82,14 +82,6 @@ body , * {
     background-color: var(--bg-color);
 }
 
-.home-main {
-    /* display: flex; */
-    /* justify-content: space-between; */
-    padding:  1rem;
-    width: 90vw;
-    height: 75vh;
-}
-
 .info{
     max-width: 50ch;
     font-size: 1.2rem;
@@ -144,19 +136,20 @@ button:hover{
     background-color: var(--ctc-color);
 }
 
-@media only screen and (max-width: 415px) {  
-    .search-bar {
-        /* display: none; */
-    }
-
+@media only screen and (max-width: 650px) {  
     .nav-links{
-        width: 100%;
         list-style-type: none;
         margin-block-start: 0;
         margin-block-end: 0em;
-        padding-inline-start: 0;
-        padding-inline-end: 0;
+    }
+  }
 
+@media only screen and (max-width: 415px) {  
+    .nav-links{
+        width: 100vw;
+        list-style-type: none;
+        margin-block-start: 0;
+        margin-block-end: 0em;
     }
 
     .sidebar-link{
