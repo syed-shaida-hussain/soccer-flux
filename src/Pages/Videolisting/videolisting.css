@@ -92,7 +92,7 @@
 }
 
 .explore-suggestion{
-    height: 7rem;
+    min-width: 80%;
     color: rgb(56, 56, 56);
     margin: 1rem;
 }
@@ -200,34 +200,13 @@
         width: 80vw;
     }
 
-
     .playlist-img{
         left: 8.7rem;
     }
   }
 
-  @media only screen and (max-width: 470px) {  
-    .playlist-img{
-        height: 11.7rem;
-        left: 10.3rem;
-        bottom: 8.2rem;
-    }
-  }
-
-  @media only screen and (max-width: 450px) {  
-    .playlist-img{
-        height: 11.7rem;
-        left: 9.7rem;
-        bottom: 8.2rem;
-    }
-  }
-
 
 @media only screen and (max-width: 415px) { 
-
-    .main-wrapper{
-        width: 10rem;
-    }
 
     .library-container{
         width: 80vw;
@@ -235,11 +214,5 @@
 
     .suggestions {
         display: none;
-    }
-
-    .playlist-img-container{
-        height: 11.7rem;
-        left: 8.1rem;
-        bottom: 8.2rem;
     }
   }

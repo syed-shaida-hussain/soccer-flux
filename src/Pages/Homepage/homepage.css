@@ -107,6 +107,7 @@ body , * {
 .explore-btn{
     padding: 0.5rem 2rem;
     margin-top: 1rem;
+    margin-bottom: 3rem;
     background: none;
     border: 1px solid var(--ctc-color);
     color: var(--ctc-color);
@@ -138,6 +139,10 @@ button:hover{
         list-style-type: none;
         margin-block-start: 0;
         margin-block-end: 0em;
+    }
+
+    .sidebar-container {
+        margin: 0rem;
     }
   }
 
