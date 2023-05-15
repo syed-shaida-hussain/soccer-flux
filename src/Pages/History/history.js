@@ -1,14 +1,13 @@
 import { Link, useNavigate } from "react-router-dom"
 import { useAuth } from "../../Contexts/auth-context"
 import axios from "axios"
-import {Header} from "../../Components/header"
 import { useEffect } from "react"
 import { useServices } from "../../Contexts/service-context"
-import { Sidebar } from "../../Components/sidebar"
 import "../Videolisting/videolisting.css"
+import { Loader } from "../../Components/loader"
 
 const HistoryPage = () => {
-    const { videoState , dispatchVideo} = useServices()
+    const { videoState , dispatchVideo , isLoading ,setIsLoading} = useServices()
     const { 
         auth: { token  } ,
       }  = useAuth()
@@ -16,8 +15,10 @@ const HistoryPage = () => {
       const navigate = useNavigate()
 
       useEffect(() => {
+        setIsLoading(true)
         axios.get("/api/user/history", {headers : {authorization : token}}).then(res => {
           dispatchVideo({type : "GET_HISTORY_VIDEOS" , payload : res.data.history})
+          setIsLoading(false)
         })
       },[])
 
@@ -52,37 +53,31 @@ const HistoryPage = () => {
         dispatchVideo({type : "DELETE_HISTORY_VIDEO" , payload : video})
       }
       
-    return (<div>
-        <Header />
-        <div className = "main-wrapper">
-          <Sidebar/>
-      <div>
-      
-      <hr/>
-      
-      <main >
-      <h2 className = "margin heading">History ({videoState.historyVideos.length}) |</h2>
+    return isLoading ? <Loader />  : (<main >
+      <div className="services">
+      <h3 className = "heading">History ({videoState.historyVideos.length}) |</h3>
       <div className = "clear-history-btn-container" >
-    {videoState.historyVideos.length > 0 && <button className = "clear-history-btn" onClick = {() => deleteAllHistoryVideos()}>Clear all History videos</button>}     </div>
+    {videoState.historyVideos.length > 0 && <button className = "clear-history-btn" onClick = {() => deleteAllHistoryVideos()}>Clear all History videos</button>}</div>
+      </div>
     {videoState.historyVideos.length > 0 ? <div className = "services margin-top-bottom">
       { videoState.historyVideos.map((video) => ( 
-        <div key = {video._id}  className = "video-card">
-          <div onClick = {() => getSingleVideo(video)}>
-                <img src= {video.imgsrc} className = "video" alt=""/>
-                <h4 className = "margin">{video.title}</h4>
-                <div className = "flex">
-                  <img className = "avatar" src={video.imgsrc} alt=""/>
-                  <p className = "font-small margin" >{video.creator}</p>
-                </div>
-                </div>
-                <span className = "material-icons delete-icon" onClick = {() => deleteFromHistory(video)}>delete</span></div> 
+        <div key = {video._id}  className = "video-wrapper">
+        <img className="thumbnail" src= {video.imgsrc} onClick={() => getSingleVideo(video)} />
+        <div className = "flex content-info" onClick={() => getSingleVideo(video)}>
+                          <img className = "avatar" src={video.imgsrc} alt=""/>
+                          <div className = "margin flex playlist-services">
+                            <div>
+                              <h4 className = "title font-small">{video.title}</h4>
+                              <p className = "font-smaller" >{video?.creator}</p>
+                              <p  className="font-small views"> {video.views} views</p>
+                            </div>
+                            <span className = "material-icons delete-icon" onClick = {() => deleteFromHistory(video)}>delete</span></div> 
+                          </div>
+                          </div>
              ))}
-     </div> : <div className = "explore-suggestion margin margin-top-bottom">Watch some videos . Your list will be shown right here.
-    <div className = "explore-btn"><Link to = "/videos" className = "link highlighted">Explore</Link></div> </div> }
-      </main>
-      </div>
-      </div>
-      </div>)
+     </div> : <div className = "explore-suggestion">Watch some videos . Your list will be shown right here.
+    <div className = "explore-btn"><Link to = "/home" className = "link highlighted">Explore</Link></div> </div> }
+      </main>)
 }
 
 export {HistoryPage}

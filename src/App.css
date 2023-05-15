@@ -1,0 +1,37 @@
+.video-wrapper{
+    min-width: 28vw;
+    margin: 1rem 0.5rem 1rem 1rem;
+    padding-bottom: 7px;
+    border-radius: 10px;
+}
+
+.video-wrapper:hover {
+    cursor: pointer;
+    transform: rotateX(0.2deg);
+    transform: rotateZ(0.2deg);
+}
+
+.thumbnail{
+    width: 100%;
+    max-height: 12rem;
+    border-radius: 10px;
+
+}
+
+@media only screen and (max-width: 1000px) {  
+
+    .video-wrapper{
+        min-width: 39vw;
+    }
+  }
+
+  @media only screen and (max-width: 700px) {  
+
+    .video-wrapper{
+        min-width: 70vw;
+    }
+
+    .thumbnails {
+        max-height: 15rem;
+    }
+  }

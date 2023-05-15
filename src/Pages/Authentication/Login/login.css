@@ -6,24 +6,29 @@
   
   body {
     font-family: sans-serif;
-    background-color: var(--body-bg-color);
     margin: 0;
     padding: 0;
   }
   
   .centered {
+    margin: auto;
     text-align: center;
   }
   
   .flex-page {
     display: flex;
   }
+
+  .login-page-wrapper{
+    margin-top: 1rem;
+    width: 90vw;
+  }
   
-  .page-wrapper {
-    margin: 3rem auto;
-    background-color: var(--page-bg-color);
+  .form-wrapper {
+    margin: auto;
+    background-color: var(--body-bg-color);
     flex-direction: column;
-    width: 24rem;
+    width: 15rem;
     padding: 2rem;
     border-radius: 0.5rem;
   }
@@ -65,10 +70,12 @@
     background-color: var(--ctc-color);
     color: var(--page-bg-color);
     font-size: 1rem;
+    border-radius: 5px;
   }
   
   .signin-guest-btn{
     background-color: var(--body-color);
+    border: 1px solid var(--ctc-color);
     color: var(--ctc-color);
     padding: 0.5rem;
     margin-top: 0.5rem;
@@ -84,9 +91,12 @@
     background: none;
   }
 
+  .suggestion{
+    margin-top: 1rem;
+  }
+
   @media only screen and (max-width: 415px) {  
     .page-wrapper {
       width: 80vw;
     }
-
   }

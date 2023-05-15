@@ -7,9 +7,8 @@ import { useAuth } from "../../Contexts/auth-context"
 import { addToLikedService } from "../../Services/addtoliked-service"
 import {addToWatchLaterService} from "../../Services/addtowatchlater-service"
 import { useServices } from "../../Contexts/service-context"
-import { Sidebar } from "../../Components/sidebar"
-import { Header } from "../../Components/header"
 import { Suggestions } from "../../Components/suggestions"
+import { Loader } from "../../Components/loader"
 
 const SingleVideoPage = () => {
     const { videoId  } = useParams();
@@ -25,13 +24,15 @@ const SingleVideoPage = () => {
     const {videoState , dispatchVideo} = useServices();
 
     useEffect(() => {
+      videoId == undefined ? navigate("/home") :
         axios.get(`/api/video/${videoId}`).then(res => {
-            const singleVideo = res.data.video;
-            setCurrVideo(singleVideo)
-        })
-        axios.get("/api/user/playlists" , {headers : {authorization : token}}).then(res =>  {
-          dispatchVideo({type : "GET_PLAYLISTS" , payload : res.data.playlists})
-        })
+          const singleVideo = res?.data?.video;
+          setCurrVideo(singleVideo)
+      })
+
+      axios.get("/api/user/playlists" , {headers : {authorization : token}}).then(res =>  {
+        dispatchVideo({type : "GET_PLAYLISTS" , payload : res?.data?.playlists})
+      })
     },[videoState])
 
   const deteteFromLikedService = async (video) => {
@@ -110,18 +111,15 @@ const SingleVideoPage = () => {
       }
 
     return (<div >
-      <Header/>
-      <div className = "flex-page">
-      <Sidebar/>
+    <div className = "flex-page">
     <div key = {currVideo._id} className = "single-video-card" >
-    <iframe className = "single-video" allowFullScreen = "1" allow = "accelerometer"  src= {currVideo.src+"?autoplay=1&mute=1"} ></iframe>
+    <iframe className = "single-video" allowFullScreen = "1" allow = "accelerometer" controls = "0"  src= {currVideo.src+"?autoplay=1&loop=1&controls=0"} ></iframe>
     <div className = "flex">
                         <img className = "avatar" src={currVideo.imgsrc} alt=""/>
                         <div className = "margin">
                         <p className = " title">{currVideo.title}</p>
                         <p className = "font-small " >{currVideo.creator}</p>
                         </div>
-                      
                         </div>
     { isModalActive && <div className = "modal-card">
       <form onSubmit={(e) => {

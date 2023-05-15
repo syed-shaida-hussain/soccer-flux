@@ -13,36 +13,10 @@
 
 .flex{
     display: flex;
-    align-items: center;
 }
 
-.video-card{
-    min-width: 30%;
-    margin-right: 1rem;
-    margin-bottom: 2rem;
-}
-
-.video-card:hover {
-    cursor: pointer;
-}
-
-.nav-links{
-    background-color: var(--ctc-color);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    align-items: center;
-    color : var(--white-color);
-    padding: 0.7rem;
-    border-radius: 5px;
-    margin-bottom: 1rem;
-}
-
-.nav-pill {
-    list-style: none;
-    margin: 0rem 1rem;
-    font-size: 1.1rem;
-    color: var(--white-color);
+.content-info{
+    margin-left: 5px;
 }
 
 .title{
@@ -52,21 +26,19 @@
 .chip-container{
     display: flex;
     justify-content: space-around;
-    margin: 0.5rem;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    min-width: 50vw;
 }
 
 .chip-button{
     border: none;
-    border-radius: 1rem;
     background-color: var(--bg-color);
-    margin: 0.5rem  0.2rem 0.5rem 0.2rem;
 }
 
 .chip{
     padding: 0.5rem 1rem;
-    color : var(--black-color);
-    text-decoration: none;
-
+    border-radius: 5px;
 }
 
 .active-link{
@@ -74,30 +46,9 @@
     color: var(--white-color);
 }
 
-.search-bar {
-    outline: none;
-    background-color: white;
-    background-color: var(--white-color);
-    border: none;
-    border-radius: 0.2rem;
-    width: 17rem;
-    height: 1.7rem;
-}
-
-.video {
-    position: relative;
-    min-width: 100%;
-    height: 11rem;
-}
-
 .home-main {
     display: flex;
     justify-content: flex-start;
-}
-
-.font-small{
-    font-size: 0.9rem;
-    font-weight: 400;
 }
 
 .margin{
@@ -106,7 +57,12 @@
 
 .heading{
     margin: 1rem;
-    padding: 1rem 0rem;
+    color: var(--ctc-color);
+}
+
+.views{
+    color: gray;
+    margin-top: 0.3rem;
 }
 
 .like-btn {
@@ -136,37 +92,38 @@
 }
 
 .explore-suggestion{
-    height: 10rem;
-    color: var(--black-color);
-    font-size: 1.2rem;
+    height: 7rem;
+    color: rgb(56, 56, 56);
+    margin: 1rem;
 }
 
-.explore-btn{
-    width: fit-content;
+.hl{
+    border-bottom: 1px solid grey;
 }
 
 .services{
     display: flex;
     flex-wrap: wrap;
-    margin-left: 2rem;
 }
 
 .delete-icon{
-    cursor: pointer;
-    position: relative;
-    bottom: 2rem;
-    left: 14.5rem;
+    margin-top: 0.5rem;
 }
 
 .clear-history-btn{
-    font-size: 1.2rem;
+    font-size: 1rem;
     color : var(--ctc-color);
+    border: 1px solid var(--ctc-color);
+    padding: 4px 6px;
+    border-radius: 5px;
 }
 
 .clear-history-btn-container{
+    margin: 1rem 0rem;
     width: 90vw;
     display: flex;
     justify-content: flex-end;
+    position: absolute;
 }
 
 .playlist-name{
@@ -190,27 +147,39 @@
 }
 
 .playlist-delete-icon{
-    cursor: pointer;
-    position: relative;
-    left: 14.5rem;
-    bottom: 3.5rem;
+    margin-top: 0.5rem;
 }
 
-.playlist-img-container{
-    justify-content: center;
-    position: relative;
-    width: 8.5rem;
-    height: 7.7rem;
-    left: 8.5rem;
-    bottom: 4rem;
-    background-color: var(--black-color);
-    color: var(--white-color);
-    margin-top: -8rem;
-    margin-right: -8.5rem;
+.playlist-services{
+    width: 100%;
+    justify-content: space-between;
 }
 
-.playlist-img{
-    font-size: 3rem;
+.loader{
+    width: 2rem;
+    height: 2rem;
+    border: 2px solid var(--ctc-color);
+    border-radius: 50%;
+    border-top: 2px solid var(--white-color);
+    animation: loading 1s infinite linear;
+}
+
+.suggestions{
+    /* width: 100%; */
+}
+
+@keyframes loading {
+    0%{
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+::-webkit-scrollbar {
+    visibility: hidden;
 }
 
 @media only screen and (max-width: 1000px) {  
@@ -221,44 +190,50 @@
   }
 
 @media only screen and (max-width: 900px) {  
-
-    .video-card{
-        min-width: 40%;
-    }
-
     .suggestions {
         display: none;
     }
   }
 
   @media only screen and (max-width: 750px) {  
-
-    .video-card{
-        min-width: 90%;
+    .thumbnail {
+        height: 16rem;
     }
 
-    .video {
-        height: 15rem;
+    .clear-history-btn-container{
+        width: 80vw;
+    }
+
+
+    .playlist-img{
+        left: 8.7rem;
+    }
+  }
+
+  @media only screen and (max-width: 470px) {  
+    .playlist-img{
+        height: 11.7rem;
+        left: 10.3rem;
+        bottom: 8.2rem;
+    }
+  }
+
+  @media only screen and (max-width: 450px) {  
+    .playlist-img{
+        height: 11.7rem;
+        left: 9.7rem;
+        bottom: 8.2rem;
     }
   }
 
 
 @media only screen and (max-width: 415px) {  
     .chip-container{
-        margin: 0;
+        margin: 0.5rem;
     }
 
     .main-wrapper{
         width: 10rem;
-    }
-
-    .delete-icon{
-        bottom: 2rem;
-        left: 14.7rem;
-    }
-
-    .clear-history-btn-container{
-        width: 85vw;
     }
 
     .library-container{
@@ -267,5 +242,11 @@
 
     .suggestions {
         display: none;
+    }
+
+    .playlist-img-container{
+        height: 11.7rem;
+        left: 8.1rem;
+        bottom: 8.2rem;
     }
   }

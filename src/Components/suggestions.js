@@ -4,6 +4,7 @@ import { useServices } from "../Contexts/service-context";
 import { useFilters } from "../Contexts/filter-context";
 import { useAuth } from "../Contexts/auth-context";
 import axios from "axios"
+import { VideoCard } from "./videoCard";
 
 const Suggestions = () => {
     const navigate = useNavigate();
@@ -33,14 +34,7 @@ const Suggestions = () => {
     return(
             <main className = "suggestions">
             <h2 className="m1">Suggestions</h2>
-            {suggestedVideos.map(video => (<div key = {video._id} className = "video-card" onClick = {() => getSingleVideo(video)} >
-                        <img src= {video.imgsrc} className = "video" alt=""/>
-                        <h2 className = "margin title">{video.title}</h2>
-                        <div className = "flex">
-                        <img className = "avatar" src={video.imgsrc} alt=""/>
-                        <p className = "font-small margin" >{video.creator}</p>
-                        </div>
-                    </div>))}
+            {suggestedVideos.map(video => (<VideoCard video={video} key={video._id} />))}
             </main>
 )
 }

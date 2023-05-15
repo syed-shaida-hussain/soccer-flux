@@ -10,7 +10,9 @@ const Signin = () => {
     email: "",
     password: "",
   });
-  const { setAuth } = useAuth();
+  const currUser = localStorage.getItem("USER")
+  const currentUser = JSON.parse(currUser)
+  const { setAuth, auth } = useAuth();
   const navigate = useNavigate()
 
   const signinSubmitHandler = async (user) => {
@@ -23,13 +25,13 @@ const Signin = () => {
         token: encodedToken,
       }));
     }
-    navigate("/videos")
+    navigate("/home")
   };
 
 
-  return (
-    <section >
-      <form className="page-wrapper flex-page"   onSubmit={e => {
+  return ( !auth.status ?
+    <section className="flex login-page-wrapper" >
+      <form className="form-wrapper flex-page"   onSubmit={e => {
           e.preventDefault();
           signinSubmitHandler(user);
         }}>
@@ -58,7 +60,10 @@ const Signin = () => {
   
         <button className="create-account-link"><Link to = "/signup">Create new account &gt; </Link></button>
     </form>
-    </section>
+    </section> : <div className=" centered ">
+      <h1>You are already Logged In</h1>
+      <div><button className="login-button suggestion" onClick={() => navigate("/home")}>Explore Videos</button></div>
+      </div>
   );
 };
 export { Signin };

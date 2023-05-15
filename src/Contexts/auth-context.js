@@ -9,8 +9,10 @@ const AuthProvider = ({ children }) => {
     username: localStorage.getItem("username") || "",
   });
 
+  const [loggedInUser,setLoggedInUser] = useState({})
+
   return (
-    <AuthContext.Provider value={{ auth, setAuth }}>
+    <AuthContext.Provider value={{ auth, setAuth , loggedInUser , setLoggedInUser }}>
       {children}
     </AuthContext.Provider>
   );

@@ -19,7 +19,6 @@ const Signup = () => {
     const {firstName, lastName , encodedToken} = await signupService(user);
     if (encodedToken !== undefined) {
       localStorage.setItem("AUTH_TOKEN", JSON.stringify(encodedToken));
-      localStorage.setItem("USERNAME", JSON.stringify(user.firstName));
       setAuth(auth => ({
         ...auth,
         status: true,
@@ -27,13 +26,13 @@ const Signup = () => {
         firstName: firstName,
         lastName : lastName
       }));
-      navigate("/videos")
+      navigate("/home")
     }
   };
 
   return (
-    <section >
-      <form class="page-wrapper flex-page"   onSubmit={e => {
+    <section className="login-page-wrapper" >
+      <form class="form-wrapper flex-page"   onSubmit={e => {
           e.preventDefault();
           signupSubmitHandler(user);
         }}>

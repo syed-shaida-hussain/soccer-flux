@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useReducer , useState } from "react";
  const ServiceContext = createContext();
 
  const serviceReducer = (state , action ) => {
@@ -48,7 +48,9 @@ import { createContext, useContext, useReducer } from "react";
  const ServiceProvider = ({children}) => {
     const [videoState  , dispatchVideo] = useReducer(serviceReducer ,  {videos : [] , categories :[], likedVideos : [] , watchLater : [] , playlists: [] , historyVideos : [] , playlistVideos : [] , singlePlaylist : [] })
 
-    return <ServiceContext.Provider value = {{ videoState , dispatchVideo }}>
+    const [isLoading , setIsLoading] = useState(false)
+
+    return <ServiceContext.Provider value = {{ videoState , dispatchVideo , isLoading , setIsLoading }}>
         {children}
     </ServiceContext.Provider>
  }

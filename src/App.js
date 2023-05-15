@@ -1,24 +1,31 @@
 import "./App.css";
+import { Header } from "./Components/header";
+import { Sidebar } from "./Components/sidebar";
 
-import { Signin , Signup , VideoListing , SingleVideoPage , CategoryClub , CategoryCountry , Home, CategoryGeneral , HistoryPage , Library, PlaylistsPage, SinglePlaylistPage} from "./Pages";
+import { Signin , Signup , VideoListing , SingleVideoPage  , Home , HistoryPage , Library, PlaylistsPage, SinglePlaylistPage} from "./Pages";
 
 import { Routes , Route } from "react-router-dom"
 
 function App() {
   return (
     <div className="App">
-      <Routes>
-      <Route path = "/" element = { <Home />} />
-        <Route path = "/home" element = { <Home />} />
+      <Header/>
+      <div className="hl"></div>
+      <main className="main-wrapper">
+        <Sidebar/>
+        <Routes>
+      <Route path = "/" element = { <VideoListing />} />
+        <Route path = "/home" element = { <VideoListing />} />
         <Route path = "/login" element = {<Signin />} />
         <Route path = "/signup" element = {<Signup />} />
-        <Route path = "/videos" element = { <VideoListing />} />
         <Route path = "/library" element = {<Library />}/>
         <Route path = "/history" element = { <HistoryPage />} />
         <Route path = {`/video/:videoId`} element = {<SingleVideoPage />} />
         <Route path = "/playlists" element = {<PlaylistsPage />}/>
         <Route path = {`/playlists/:playlistId`} element = {<SinglePlaylistPage />} />
       </Routes>
+      </main>
+
     </div>
   );
 }
