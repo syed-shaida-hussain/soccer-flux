@@ -164,10 +164,6 @@
     animation: loading 1s infinite linear;
 }
 
-.suggestions{
-    /* width: 100%; */
-}
-
 @keyframes loading {
     0%{
         transform: rotate(0deg);
@@ -227,10 +223,7 @@
   }
 
 
-@media only screen and (max-width: 415px) {  
-    .chip-container{
-        margin: 0.5rem;
-    }
+@media only screen and (max-width: 415px) { 
 
     .main-wrapper{
         width: 10rem;
