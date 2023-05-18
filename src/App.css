@@ -15,6 +15,8 @@
     width: 100%;
     max-height: 12rem;
     border-radius: 10px;
+    aspect-ratio: 3/2;
+    mix-blend-mode: color-burn;
 
 }
 
@@ -31,7 +33,7 @@
         min-width: 70vw;
     }
 
-    .thumbnails {
+    .thumbnail {
         max-height: 15rem;
     }
   }
