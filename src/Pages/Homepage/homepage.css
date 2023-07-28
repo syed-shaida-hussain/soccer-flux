@@ -146,7 +146,7 @@ button:hover{
     }
   }
 
-@media only screen and (max-width: 415px) {  
+@media only screen and (max-width: 450px) {  
     .nav-links{
         width: 100vw;
         list-style-type: none;
@@ -173,6 +173,27 @@ button:hover{
         position: relative;
         bottom: 9rem;   
         left: 11.5rem;
+    }
+
+    .sidebar-container {
+        margin: 0;
+        background-color: var(--bg-color);
+        position: fixed;
+        bottom: 0;
+        z-index: 9999;
+       
+    }
+
+    .sidebar-nav{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100vw;
+    }
+
+    .sidebar-link{
+        margin-bottom:0 ;
+        margin-top: 0;
     }
 
   }
