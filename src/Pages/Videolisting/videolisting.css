@@ -26,9 +26,8 @@
 .chip-container{
     display: flex;
     justify-content: space-around;
-    padding: 0.5rem;
+    padding: 0.5rem 0.2rem;
     margin-top: 0.5rem;
-    min-width: 50vw;
 }
 
 .chip-button{
@@ -37,7 +36,7 @@
 }
 
 .chip{
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.7rem;
     border-radius: 5px;
 }
 
