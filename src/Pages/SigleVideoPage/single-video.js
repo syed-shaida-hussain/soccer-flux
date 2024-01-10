@@ -110,10 +110,10 @@ const SingleVideoPage = () => {
         dispatchVideo({type : "DELETE_WATCHLATER_VIDEOS" , payload : currVideo})
       }
 
-    return (<div >
+    return (<div>
     <div className = "flex-page">
-    <div key = {currVideo._id} className = "single-video-card" >
-    <iframe className = "single-video" allowFullScreen = "1" allow = "accelerometer" controls = "0"  src= {currVideo.src+"?autoplay=1&loop=1&controls=0"} ></iframe>
+    <div key = {currVideo._id} className = "single-video-card">
+    <iframe className = "single-video" allowFullScreen = "1" allow = "accelerometer" controls = "0" src= {currVideo.src+"?autoplay=1&loop=1&controls=0"} ></iframe>
     <div className = "flex">
                         <img className = "avatar" src={currVideo.imgsrc} alt=""/>
                         <div className = "margin">

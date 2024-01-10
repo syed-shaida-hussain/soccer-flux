@@ -6,8 +6,7 @@ const Sidebar = () => {
     return (
     <aside className = "sidebar-container">
         <ul className = "sidebar-nav">
-           <NavLink to = "/home" className={({ isActive }) => 
-                      (isActive ? "sidebar-link-active  " : " link ")}> <li className = "sidebar-link hover" ><span className="material-icons">home</span> Home </li>
+           <NavLink to = "/home" className={({ isActive }) => (isActive ? "sidebar-link-active" : "link")}> <li className = "sidebar-link hover" ><span className="material-icons">home</span> Home </li>
            </NavLink>
            <NavLink to = "/library" className={({ isActive }) => 
                       (isActive ? "sidebar-link-active " : " link")}> <li className = "sidebar-link hover" ><span className="material-icons">video_library</span> Library </li>

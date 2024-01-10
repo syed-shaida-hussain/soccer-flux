@@ -7,7 +7,7 @@ import "../Videolisting/videolisting.css"
 import { Loader } from "../../Components/loader"
 
 const HistoryPage = () => {
-    const { videoState , dispatchVideo , isLoading ,setIsLoading} = useServices()
+    const { videoState , dispatchVideo , isLoading ,setIsLoading} = useServices();
     const { 
         auth: { token  } ,
       }  = useAuth()

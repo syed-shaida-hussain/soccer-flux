@@ -4,7 +4,7 @@ import { Sidebar } from "./Components/sidebar";
 
 import { Signin , Signup , VideoListing , SingleVideoPage  , Home , HistoryPage , Library, PlaylistsPage, SinglePlaylistPage} from "./Pages";
 
-import { Routes , Route } from "react-router-dom"
+import { Routes , Route , Navigate } from "react-router-dom"
 
 function App() {
   return (
@@ -13,8 +13,8 @@ function App() {
       <div className="hl"></div>
       <main className="main-wrapper">
         <Sidebar/>
-        <Routes>
-      <Route path = "/" element = { <VideoListing />} />
+      <Routes>
+      <Route path = "/" element = { <Navigate to = "/home" />} />
         <Route path = "/home" element = { <VideoListing />} />
         <Route path = "/login" element = {<Signin />} />
         <Route path = "/signup" element = {<Signup />} />
