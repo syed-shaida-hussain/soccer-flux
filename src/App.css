@@ -1,5 +1,5 @@
 .video-wrapper{
-    min-width: 28vw;
+    min-width: 30vw;
     margin: 1rem 0.5rem 1rem 0rem;
     padding-bottom: 7px;
     border-radius: 10px;
@@ -14,24 +14,45 @@
 
 .thumbnail{
     width: 100%;
-    max-height: 12rem;
+    max-height: 13rem;
     border-radius: 10px;
     aspect-ratio: 3/2;
     mix-blend-mode: color-burn;
 
 }
 
+@media only screen and (max-width: 1100px) {  
+
+    .video-wrapper{
+        min-width: 27vw;
+    }
+  }
+
 @media only screen and (max-width: 1000px) {  
 
     .video-wrapper{
-        min-width: 39vw;
+        min-width: 44vw;
+    }
+  }
+
+  @media only screen and (max-width: 850px) {  
+
+    .video-wrapper{
+        min-width: 41vw;
+    }
+  }
+
+  @media only screen and (max-width: 750px) {  
+
+    .video-wrapper{
+        min-width: 35vw;
     }
   }
 
   @media only screen and (max-width: 700px) {  
 
     .video-wrapper{
-        min-width: 70vw;
+        min-width: 80vw;
     }
 
     .thumbnail {

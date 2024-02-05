@@ -42,6 +42,7 @@ body , * {
 
 .hero-icon{
     margin-right: 5px;
+    margin-left: 5px;
     font-size: 2rem;
 }
 
@@ -181,7 +182,7 @@ button:hover{
         position: fixed;
         bottom: 0;
         z-index: 9999;
-       
+        padding: 0px 5px;
     }
 
     .sidebar-nav{
